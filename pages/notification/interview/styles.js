@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   messageContainer: {
     display: "flex",
-    marginHorizontal: 10,
+    marginHorizontal: 2,
     marginVertical: 15,
   },
   text: {

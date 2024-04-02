@@ -7,17 +7,11 @@ import useTheme from "../../hook/useTheme";
 import { global } from "../../styles/global";
 import SectionContainer from "../../components/shared folder/containers/sectionContainer/SectionContainer";
 import {
-  firstheader,
-  secondheader,
-  thirdheader,
-  resume,
-  upload,
   empName,
   role,
   email,
   number,
   buttons,
-  editButton,
   profileList,
 } from "../../data/Data";
 
@@ -59,7 +53,7 @@ const Profile = () => {
 
   return (
     <MainContainer isDark={isDark}>
-      <SectionContainer header={firstheader}></SectionContainer>
+      <SectionContainer header={"profile"}></SectionContainer>
       <View style={styles.applicantMain}>
         <Image source={emptyImage} style={styles.imageProfile}></Image>
         <View style={styles.applicantdetails}>
@@ -70,7 +64,7 @@ const Profile = () => {
         </View>
       </View>
 
-      <SectionContainer header={secondheader}></SectionContainer>
+      <SectionContainer header={"skills"}></SectionContainer>
       <View style={styles.skillsContainer}>
         {profileList.list.map((item, index) => (
           <TouchableOpacity key={index} style={styles.skillsList}>
@@ -79,16 +73,16 @@ const Profile = () => {
         ))}
       </View>
 
-      <SectionContainer header={thirdheader}></SectionContainer>
+      <SectionContainer header={"uploaded files"}></SectionContainer>
 
       <View style={styles.filesContainer}>
-        <Text style={[styles.fileText, fs.poppins]}>{resume}</Text>
+        <Text style={[styles.fileText, fs.poppins]}>{"resume"}</Text>
         <View style={styles.choosefileContainer}>
           <TouchableOpacity
             style={styles.fileInputButton}
             onPress={handleFilePick}
           >
-            <Text style={[styles.btnStyle, fs.poppins]}>{buttons}</Text>
+            <Text style={[styles.btnStyle, fs.poppins]}>{"choose file"}</Text>
           </TouchableOpacity>
           <View style={styles.fileNamePlaceholder}>
             <Text style={[styles.placeholder, fs.poppins]}>
@@ -99,13 +93,15 @@ const Profile = () => {
       </View>
 
       <View style={styles.filesContainer}>
-        <Text style={[styles.fileText, fs.poppins]}>{upload}</Text>
+        <Text style={[styles.fileText, fs.poppins]}>
+          {"upload your previous works here"}
+        </Text>
         <View style={styles.choosefileContainer}>
           <TouchableOpacity
             style={styles.fileInputButton}
             onPress={handleFilePick}
           >
-            <Text style={[styles.btnStyle, fs.poppins]}>{buttons}</Text>
+            <Text style={[styles.btnStyle, fs.poppins]}>{"choose file"}</Text>
           </TouchableOpacity>
           <View style={styles.fileNamePlaceholder}>
             <Text style={[styles.placeholder, fs.poppins]}>
@@ -118,13 +114,6 @@ const Profile = () => {
       <View style={styles.imageContainer}>
         <Image source={emptyImage} style={styles.imageStyle}></Image>
       </View>
-
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate("")}
-      >
-        <Text style={styles.buttonStyle}>{editButton}</Text>
-      </TouchableOpacity>
     </MainContainer>
   );
 };

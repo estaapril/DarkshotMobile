@@ -38,13 +38,20 @@ export const styles = StyleSheet.create({
     textAlignVertical: "center",
   },
   name: {
-    marginBottom: -5,
+    fontFamily: "Inter-Bold",
+    fontSize: 15,
+    marginBottom: -2,
   },
-  position: {},
+  position: {
+    fontFamily: "Inter-Regular",
+    fontSize: 14,
+    textTransform: "capitalize",
+  },
   duration: {
     color: "#212599",
     alignSelf: "center",
     fontSize: 9,
     marginLeft: 8,
+    marginBottom: -2,
   },
 });

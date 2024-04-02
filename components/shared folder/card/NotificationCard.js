@@ -4,15 +4,7 @@ import { styles } from "./styles";
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
 
-const NotificationCard = ({
-  isDark,
-  name,
-  nameStyle,
-  position,
-  positionStyle,
-  message,
-  link,
-}) => {
+const NotificationCard = ({ isDark, name, position, message }) => {
   const { theme } = useTheme(isDark);
   const fs = global.customFonts;
 
@@ -24,9 +16,11 @@ const NotificationCard = ({
           source={require("../../../assets/icon.png")}
         />
         <View>
-          <Text style={[theme.txtColor, styles.name, fs.poppins]}>{name}</Text>
+          <Text style={[theme.txtColor, styles.name, fs.interBold]}>
+            {name}
+          </Text>
           <View style={{ flexDirection: "row" }}>
-            <Text style={[theme.txtColor, styles.position, fs.poppins]}>
+            <Text style={[theme.txtColor, styles.position, fs.inter]}>
               {position}
             </Text>
             <Text style={[styles.duration, theme.txtColorTertiary, fs.poppins]}>
@@ -36,13 +30,13 @@ const NotificationCard = ({
         </View>
       </View>
       <View style={styles.body}>
-        <Text style={[theme.txtColor, fs.poppins]} numberOfLines={3}>
+        <Text style={[theme.txtColor, fs.inter]} numberOfLines={3}>
           {message}
         </Text>
       </View>
       <View style={styles.footer}>
         <TouchableOpacity style={[styles.button, theme.secondaryBgColor]}>
-          <Text style={[theme.secondaryTxtColor, styles.btnText]}>
+          <Text style={[theme.secondaryTxtColor, styles.btnText, fs.inter]}>
             View message
           </Text>
         </TouchableOpacity>

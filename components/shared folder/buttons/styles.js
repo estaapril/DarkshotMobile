@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   btnContainer: {
-    backgroundColor: "black",
-    height: 48,
+    backgroundColor: "#373737",
+    height: 40,
     width: "auto",
     justifyContent: "center",
     alignItems: "center",
@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat-Regular",
     fontSize: 20,
     textAlign: "center",
-    textTransform: "uppercase",
+    textTransform: "capitalize",
   },
 });

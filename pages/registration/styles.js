@@ -1,70 +1,47 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  fwBold: {
-    fontFamily: "Montserrat-Bold",
-  },
   label: {
-    paddingBottom: 12,
-    fontSize: 17,
-    color: "white",
-    textTransform: "capitalize",
+    fontSize: 15,
   },
   headerContainer: {
-    height: 200,
-    marginRight: 50,
-    marginLeft: 25,
-    marginTop: 5,
+    height: "auto",
+    display: "flex",
+    paddingHorizontal: 10,
+    marginBottom: 35,
   },
   topTitle: {
-    fontSize: 35,
-    color: "white",
+    fontSize: 25,
   },
   container: {
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    borderWidth: 1,
-    // borderColor: "yellow",
-    // width: "100%",
+    display: "flex",
+    paddingBottom: 18,
   },
   inputContainer: {
     paddingHorizontal: 10,
-    paddingBottom: 15,
+    marginTop: 8,
   },
   inputStyle: {
     width: "100%",
-    height: 45,
+    height: 40,
     backgroundColor: "white",
     padding: 10,
-    fontSize: 18,
+    fontSize: 15,
     borderRadius: 5,
+    fontFamily: "Montserrat-Regular",
   },
   actionContainer: {
-    width: "100%",
-    paddingBottom: 20,
-    paddingTop: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
+    marginTop: 45,
+    marginBottom: 18,
   },
   activeLink: {
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 13,
     textAlign: "right",
-    color: "white",
     textTransform: "capitalize",
   },
   normalText: {
-    fontSize: 16,
-    fontWeight: "100",
+    fontSize: 13,
     textAlign: "right",
-    color: "white",
-  },
-  logoContainer: {
-    marginTop: 20,
-  },
-  mainBrand: {
-    resizeMode: "contain",
-    alignSelf: "center",
-    tintColor: "white",
-    height: 70,
   },
 });

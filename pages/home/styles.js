@@ -3,7 +3,9 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   categoryContainer: {
     display: "flex",
-    width: "auto",
+    height: 8,
+    marginBottom: 20,
+    marginLeft: -15,
   },
   categoryButton: {
     display: "flex",
@@ -14,7 +16,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 6,
     marginHorizontal: 5,
-    marginVertical: 18,
     borderRadius: 4,
     color: "black",
   },
@@ -37,7 +38,6 @@ export const styles = StyleSheet.create({
   },
   primaryColumn: {
     flexDirection: "row",
-    // marginBottom: 10,
     alignItems: "center",
   },
   secondaryColumn: {

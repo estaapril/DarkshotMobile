@@ -1,7 +1,6 @@
-import { View, Text, TextInput, Image } from "react-native";
+import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
 import { styles } from "./styles";
-import brand from "../../assets/images/darkshotLogo2White.png";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
 import Buttons from "../../components/shared folder/buttons/Buttons";
@@ -16,10 +15,8 @@ const Registration = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [confirmpw, setConfirmpw] = useState("");
 
-  const question = "Already have an account?";
-
   const handleLogin = () => navigation.navigate("Home");
-  const handleSignup = () => navigation.navigate("Registration1");
+  const handleSignup = () => navigation.navigate("RegistrationSteps");
   const handleSignin = () => navigation.navigate("Login");
 
   const handleUsername = (e) => {
@@ -31,18 +28,31 @@ const Registration = ({ navigation }) => {
   const handleConfirm = (e) => {
     return setConfirmpw(e.target.value);
   };
+
+  const titleHeader = [styles.topTitle, fs.montserrat, theme.txtColor];
   return (
-    <MainContainer isDark={isDark}>
-      <View style={styles.headerContainer}>
-        <Text style={[styles.topTitle, fs.montserrat]}>
-          <Text style={styles.fwBold}>Looking</Text> for Jobs? Want to{" "}
-          <Text style={styles.fwBold}>provide </Text>services? {"\n"}
-          {"\n"}Join us
+    <MainContainer
+      isDark={isDark}
+      hasLogo={false}
+      scrollable={true}
+      isCentered={true}
+      hasFooter={true}
+    >
+      <View style={[styles.headerContainer, { paddingBottom: 30 }]}>
+        <Text style={titleHeader}>
+          <Text style={fs.montserratBold}>Looking</Text> for Jobs?
         </Text>
+        <Text style={titleHeader}>
+          Want to <Text style={fs.montserratBold}>provide</Text>
+        </Text>
+        <Text style={titleHeader}>services?{"\n"}</Text>
+        <Text style={titleHeader}>Join us</Text>
       </View>
 
       <View style={styles.container}>
-        <Text style={[styles.label, fs.montserrat]}>username</Text>
+        <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
+          {"Username"}
+        </Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputStyle}
@@ -52,30 +62,38 @@ const Registration = ({ navigation }) => {
       </View>
 
       <View style={styles.container}>
-        <Text style={[styles.label, fs.montserrat]}>password</Text>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.inputStyle} secureTextEntry={true} />
-        </View>
-      </View>
-
-      <View style={styles.container}>
-        <Text style={[styles.label, fs.montserrat]}>
-          re-enter your password
+        <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
+          {"Password"}
         </Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputStyle}
-            onChangeText={(text) => setUsername(text)}
+            secureTextEntry={true}
+            onChangeText={(text) => setPassword(text)}
+          />
+        </View>
+      </View>
+
+      <View style={styles.container}>
+        <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
+          {"Re-enter your password"}
+        </Text>
+
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.inputStyle}
+            secureTextEntry={true}
+            onChangeText={(text) => setConfirmpw(text)}
           />
         </View>
 
         <View style={styles.actionContainer}>
-          <Buttons onPress={handleSignup}>signup</Buttons>
+          <Buttons onPress={handleSignup}>sign up</Buttons>
         </View>
 
-        <View style={[styles.container, { paddingHorizontal: 23 }]}>
-          <Text style={[styles.normalText, fs.poppins]}>
-            {question + " "}
+        <View style={[styles.container, { paddingRight: 20 }]}>
+          <Text style={[styles.normalText, fs.poppins, theme.txtColor]}>
+            {"Already have an account?" + " "}
             <Text
               style={[styles.activeLink, fs.poppinsBold]}
               onPress={handleSignin}
@@ -84,10 +102,6 @@ const Registration = ({ navigation }) => {
             </Text>
           </Text>
         </View>
-      </View>
-
-      <View style={styles.logoContainer}>
-        <Image source={brand} style={styles.mainBrand} />
       </View>
     </MainContainer>
   );

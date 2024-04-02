@@ -4,13 +4,14 @@ export const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
     display: "flex",
-    width: 330,
-    marginTop: 80,
+    width: 300,
+    marginTop: 40,
   },
   logoContainer: {
     alignSelf: "center",
     marginRight: 5,
-    left: -8,
+    left: -10,
+    justifyContent: "flex-start",
   },
   logo: {
     height: 70,
@@ -31,10 +32,10 @@ export const styles = StyleSheet.create({
     marginVertical: 10,
   },
   header: {
-    fontSize: 15,
+    fontSize: 14,
   },
   text: {
-    fontSize: 14,
+    fontSize: 13,
   },
   inviteContainer: {
     marginVertical: 10,
@@ -74,6 +75,6 @@ export const styles = StyleSheet.create({
   },
   btnSubmit: {
     fontSize: 15,
-    color: "#1E90FF",
+    color: "#4B77E8",
   },
 });

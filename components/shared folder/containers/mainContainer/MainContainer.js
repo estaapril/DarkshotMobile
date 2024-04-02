@@ -4,9 +4,15 @@ import { styles } from "../mainContainer/styles";
 import { useEffect } from "react";
 import useTheme from "../../../../hook/useTheme";
 import { useFonts } from "expo-font";
-import { StatusBar } from "expo-status-bar";
 
-const MainContainer = ({ isDark, children }) => {
+const MainContainer = ({
+  isDark,
+  isCentered,
+  hasLogo,
+  hasFooter,
+  scrollable,
+  children,
+}) => {
   const LogoLight = require("../../../../assets/images/darkshot-logo.png");
   const LogoDark = require("../../../../assets/images/darkshot-logo-dark.png");
   const { theme } = useTheme(isDark);
@@ -19,6 +25,8 @@ const MainContainer = ({ isDark, children }) => {
     "Poppins-SemiBold": require("../../../../assets/fonts/Poppins/Poppins-SemiBold.ttf"),
     "Montserrat-Regular": require("../../../../assets/fonts/Montserrat/static/Montserrat-Regular.ttf"),
     "Montserrat-Bold": require("../../../../assets/fonts/Montserrat/static/Montserrat-Bold.ttf"),
+    "Inter-Regular": require("../../../../assets/fonts/Inter/Inter-Regular.ttf"),
+    "Inter-Bold": require("../../../../assets/fonts/Inter/Inter-Bold.ttf"),
   });
 
   useEffect(() => {
@@ -36,20 +44,61 @@ const MainContainer = ({ isDark, children }) => {
   if (!fontsLoaded) {
     return null;
   }
+
+  const logoFooter = {
+    height: 55,
+    paddingTop: 0,
+    paddingBottom: 10,
+  };
   return (
-    <View style={[theme.bgColor, styles.container]}>
-      <ScrollView style={styles.scrollContainer}>
-        <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={isDark ? LogoLight : LogoDark} />
+    <View
+      style={[theme.bgColor, styles.container, isCentered && styles.centered]}
+    >
+      {scrollable || scrollable == null ? (
+        <ScrollView
+          bounces={false}
+          alwaysBounceVertical={false}
+          style={styles.scrollContainer}
+        >
+          {hasLogo || hasLogo == null ? (
+            <View style={styles.logoContainer}>
+              <Image
+                style={styles.logo}
+                source={isDark ? LogoLight : LogoDark}
+              />
+            </View>
+          ) : null}
+          {children}
+          {hasFooter && (
+            <View style={styles.logoContainerFooter}>
+              <Image
+                style={[styles.logo, logoFooter]}
+                source={isDark ? LogoLight : LogoDark}
+              />
+            </View>
+          )}
+        </ScrollView>
+      ) : (
+        <View style={styles.scrollContainer}>
+          {hasLogo || hasLogo == null ? (
+            <View style={styles.logoContainer}>
+              <Image
+                style={styles.logo}
+                source={isDark ? LogoLight : LogoDark}
+              />
+            </View>
+          ) : null}
+          {children}
+          {hasFooter && (
+            <View style={styles.logoContainerFooter}>
+              <Image
+                style={[styles.logo, logoFooter]}
+                source={isDark ? LogoLight : LogoDark}
+              />
+            </View>
+          )}
         </View>
-        {children}
-      </ScrollView>
-      <StatusBar
-        animated={true}
-        backgroundColor={theme.bgColor.backgroundColor}
-        translucent={true}
-        hidden={true}
-      />
+      )}
     </View>
   );
 };

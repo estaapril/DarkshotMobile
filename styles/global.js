@@ -39,11 +39,20 @@ export const global = StyleSheet.create({
     montserrat: {
       fontFamily: "Montserrat-Regular",
     },
+    montserratBold: {
+      fontFamily: "Montserrat-Bold",
+    },
     agdasima: {
       fontFamily: "Agdasima-Regular",
     },
     agdasimaBold: {
       fontFamily: "Agdasima-Bold",
+    },
+    inter: {
+      fontFamily: "Inter-Regular",
+    },
+    interBold: {
+      fontFamily: "Inter-Bold",
     },
   },
 });

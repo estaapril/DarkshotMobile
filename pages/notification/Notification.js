@@ -1,6 +1,5 @@
 import React from "react";
-import { styles } from "./styles";
-import { header, name, position, notifmessages } from "../../data/Data";
+import { name, position, notifmessages } from "../../data/Data";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
 import { useTheme } from "@react-navigation/native";
@@ -14,14 +13,12 @@ const Notification = () => {
 
   return (
     <MainContainer isDark={isDark}>
-      <SectionContainer header={header}>
+      <SectionContainer header={"notification"}>
         {Object.keys(notifmessages).map((key) => (
           <NotificationCard
             key={key}
             name={name}
-            nameStyle={[styles.title, fs.poppinsBold]} // not working
             position={position}
-            positionStyle={[styles.title, fs.poppins]} // not working
             message={notifmessages[key]}
           />
         ))}

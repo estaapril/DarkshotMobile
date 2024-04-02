@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
     borderTopWidth: 0,
     marginVertical: 5,
     marginBottom: 15,
-    flex: 1,
     display: "flex",
     borderLeftWidth: 0,
   },
@@ -32,7 +31,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "#333333",
     alignItems: "center",
     justifyContent: "center",
-    Bottom: 20,
   },
   btnStyle: {
     fontSize: 15,
@@ -54,38 +52,8 @@ export const styles = StyleSheet.create({
     marginBottom: 50,
   },
   image: {
+    objectFit: "cover",
     height: 100,
     width: 140,
-  },
-  submitButton: {
-    position: "absolute",
-    right: 40,
-    marginBottom: 50,
-    top: 800,
-    backgroundColor: "#fff",
-  },
-  proceedButton: {
-    flex: 1,
-    backgroundColor: "#444",
-    paddingHorizontal: "1rem",
-    paddingVertical: ".5rem",
-  },
-  proceedButtonText: {
-    textTransform: "uppercase",
-    color: "white",
-    fontSize: 15,
-  },
-  backButton: {
-    fontSize: 12,
-    color: "white",
-    textTransform: "uppercase",
-    fontWeight: "bold",
-  },
-  backContainer: {
-    position: "absolute",
-    bottom: -227,
-    alignSelf: "center",
-    left: 125,
-    backgroundColor: "black",
   },
 });
