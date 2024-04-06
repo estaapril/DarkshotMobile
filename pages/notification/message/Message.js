@@ -15,7 +15,7 @@ const Message = () => {
 
   return (
     <MainContainer isDark={isDark} scrollable={false}>
-      <SectionContainer header={"notification"}>
+      <SectionContainer header={"invitation"}>
         <View style={styles.mainContainer}>
           <View style={styles.logoContainer}>
             <Image source={logo} style={styles.logo}></Image>

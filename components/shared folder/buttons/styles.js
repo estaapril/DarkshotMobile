@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     width: "auto",
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 5,
   },
   btnText: {
     color: "white",

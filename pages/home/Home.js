@@ -30,10 +30,7 @@ const Home = () => {
 
   return (
     <MainContainer isDark={isDark} scrollable={true} hasLogo={true}>
-      <SectionContainer
-        header={"notification"}
-        subHeader={"(home based, hybrid)"}
-      >
+      <SectionContainer header={"careers"} subHeader={"(home based, hybrid)"}>
         <ScrollView horizontal={true} style={styles.categoryContainer}>
           {jobList.categories.map((category, index) => (
             <TouchableOpacity key={index}>

@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     borderRadius: 25,
   },
   btnText: {
-    fontSize: 10,
+    fontSize: 12,
     textAlignVertical: "center",
   },
   name: {
@@ -46,6 +46,10 @@ export const styles = StyleSheet.create({
     fontFamily: "Inter-Regular",
     fontSize: 14,
     textTransform: "capitalize",
+  },
+  message: {
+    fontFamily: "Inter-Regular",
+    fontSize: 15,
   },
   duration: {
     color: "#212599",

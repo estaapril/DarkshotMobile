@@ -30,7 +30,10 @@ const NotificationCard = ({ isDark, name, position, message }) => {
         </View>
       </View>
       <View style={styles.body}>
-        <Text style={[theme.txtColor, fs.inter]} numberOfLines={3}>
+        <Text
+          style={[styles.message, theme.txtColor, fs.inter]}
+          numberOfLines={3}
+        >
           {message}
         </Text>
       </View>

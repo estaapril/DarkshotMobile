@@ -91,7 +91,7 @@ const Registration = ({ navigation }) => {
           <Buttons onPress={handleSignup}>sign up</Buttons>
         </View>
 
-        <View style={[styles.container, { paddingRight: 20 }]}>
+        <View style={[styles.container, { paddingRight: 10 }]}>
           <Text style={[styles.normalText, fs.poppins, theme.txtColor]}>
             {"Already have an account?" + " "}
             <Text
