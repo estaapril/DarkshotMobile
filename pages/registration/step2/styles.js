@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     color: "#333333",
   },
   choosefileContainer: {
-    borderWidth: 1,
+    borderBottomWidth: 2,
     borderColor: "#333333",
     flexDirection: "row",
     columnGap: 12,
@@ -49,11 +49,24 @@ export const styles = StyleSheet.create({
     top: 20,
     flexDirection: "row",
     columnGap: 15,
-    marginBottom: 50,
+    marginBottom: 30,
   },
   image: {
     objectFit: "cover",
-    height: 100,
-    width: 140,
+    height: 80,
+    width: 120,
+  },
+  designContainer: {
+    flexDirection: "row",
+    columnGap: 15,
+    alignItems: "center",
+    flex: 3,
+    display: "flex",
+  },
+  design: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: "white",
+    display: "flex",
   },
 });

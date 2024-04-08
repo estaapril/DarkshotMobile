@@ -40,10 +40,10 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     display: "flex",
-    marginBottom: 30,
   },
   skillsList: {
-    backgroundColor: "#F8F9FA",
+    // backgroundColor: "#F8F9FA",
+    backgroundColor: "#EDEDED",
     borderRadius: 20,
     marginHorizontal: 5,
     marginVertical: 5,
@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   choosefileContainer: {
-    borderWidth: 1,
+    borderBottomWidth: 2,
     borderColor: "black",
     flexDirection: "row",
     columnGap: 12,
@@ -91,11 +91,10 @@ export const styles = StyleSheet.create({
   imageStyle: {
     resizeMode: "contain",
     borderRadius: 5,
-    width: 350,
+    width: 320,
     height: 180,
   },
   imageContainer: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 10,

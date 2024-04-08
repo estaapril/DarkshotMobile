@@ -26,9 +26,9 @@ export const styles = StyleSheet.create({
     height: 40,
     backgroundColor: "white",
     padding: 10,
-    fontSize: 15,
+    fontSize: 18,
     borderRadius: 5,
-    fontFamily: "Montserrat-Regular",
+    paddingLeft: 37,
   },
   actionContainer: {
     paddingHorizontal: 10,
@@ -43,5 +43,18 @@ export const styles = StyleSheet.create({
   normalText: {
     fontSize: 13,
     textAlign: "right",
+  },
+  icon: {
+    position: "absolute",
+    left: 20,
+    top: 10,
+    width: 22,
+    height: 22,
+  },
+  eyeIcon: {
+    position: "absolute",
+    right: 40,
+    width: 22,
+    height: 22,
   },
 });

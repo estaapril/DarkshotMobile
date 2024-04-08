@@ -24,6 +24,10 @@ export const global = StyleSheet.create({
       fontFamily: "Poppins-Regular",
       fontSize: 14,
     },
+    buttonText: {
+      fontFamily: "Montserrat-Regular",
+      fontSize: 15,
+    },
     poppins: {
       fontFamily: "Poppins-Regular",
     },
@@ -38,6 +42,9 @@ export const global = StyleSheet.create({
     },
     montserrat: {
       fontFamily: "Montserrat-Regular",
+    },
+    montserratMedium: {
+      fontFamily: "Montserrat-Medium",
     },
     montserratBold: {
       fontFamily: "Montserrat-Bold",
@@ -62,25 +69,25 @@ export const lightMode = StyleSheet.create({
     borderColor: "#ADADAD",
   },
   borderBottomColor: {
-    borderBottomColor: "#000",
+    borderBottomColor: "#1C1C1C",
   },
   txtColor: {
     color: "#000",
   },
   txtColorSecondary: {
-    color: "#ADADAD",
+    color: "#fff",
   },
   txtColorTertiary: {
     color: "#848484",
   },
   secondaryBgColor: {
-    backgroundColor: "#000",
+    backgroundColor: "#1C1C1C",
   },
   secondaryTxtColor: {
     color: "#FAFAFA",
   },
   bgColor: {
-    backgroundColor: "white",
+    backgroundColor: "#FAFAFA",
   },
 });
 export const darkMode = StyleSheet.create({
@@ -92,10 +99,10 @@ export const darkMode = StyleSheet.create({
     borderBottomColor: "#FAFAFA",
   },
   txtColor: {
-    color: "#FAFAFA",
+    color: "#fff",
   },
   txtColorSecondary: {
-    color: "#DEDEDE",
+    color: "#000",
   },
   txtColorTertiary: {
     color: "#ADADAD",
@@ -104,9 +111,9 @@ export const darkMode = StyleSheet.create({
     backgroundColor: "#FAFAFA",
   },
   secondaryTxtColor: {
-    color: "#000",
+    color: "#1C1C1C",
   },
   bgColor: {
-    backgroundColor: "#000",
+    backgroundColor: "#1C1C1C",
   },
 });

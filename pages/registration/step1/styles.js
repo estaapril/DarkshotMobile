@@ -24,31 +24,27 @@ export const styles = StyleSheet.create({
   inputField: {
     height: 30,
     borderBottomColor: "white",
-    borderWidth: 1,
-    backgroundColor: "black",
+    borderBottomWidth: 1,
   },
   subHeader: {
     fontSize: 10,
     color: "gray",
   },
   skillsHeader: {
-    flex: 1,
     display: "flex",
     flexDirection: "row",
-    columnGap: 8,
-    justifyContent: "center",
-    top: -30,
+    columnGap: 10,
+    marginBottom: 20,
   },
   text: {
     textTransform: "uppercase",
+    display: "flex",
     color: "white",
-    fontSize: 13,
   },
   skillsMainContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginHorizontal: 10,
-    marginTop: -15,
+    display: "flex",
   },
   skillContainer: {
     backgroundColor: "#B3B3B3",

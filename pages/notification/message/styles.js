@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
     display: "flex",
-    width: 300,
     marginTop: 40,
   },
   logoContainer: {
@@ -19,9 +18,8 @@ export const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   container: {
-    flex: 1,
-    width: 100,
     display: "flex",
+    marginLeft: 35,
   },
   messageContainer: {
     display: "flex",
@@ -43,11 +41,12 @@ export const styles = StyleSheet.create({
   noteContainer: {
     display: "flex",
     marginVertical: 10,
+    marginBottom: 20,
   },
   clickContainer: {
     display: "flex",
     marginVertical: 10,
-    paddingLeft: 50,
+    paddingLeft: 10,
   },
   btnContainer: {
     flexDirection: "column",

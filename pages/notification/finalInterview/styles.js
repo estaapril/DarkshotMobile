@@ -11,12 +11,12 @@ export const styles = StyleSheet.create({
   },
   primaryContainer: {
     display: "flex",
-    marginHorizontal: 15,
+    marginHorizontal: 8,
     marginVertical: 15,
   },
   secondaryContainer: {
     display: "flex",
-    marginHorizontal: 15,
+    marginHorizontal: 8,
     flexDirection: "row",
     columnGap: 2,
   },

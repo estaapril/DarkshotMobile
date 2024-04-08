@@ -1,10 +1,14 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { styles } from "./styles";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
 import Buttons from "../../components/shared folder/buttons/Buttons";
 import useTheme from "../../hook/useTheme";
+import user from "../../assets/icons/user.png";
+import padlock from "../../assets/icons/padlock.png";
+import view from "../../assets/icons/view.png";
+import hide from "../../assets/icons/hide.png";
 
 const Registration = ({ navigation }) => {
   const isDark = true;
@@ -14,6 +18,7 @@ const Registration = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpw, setConfirmpw] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => navigation.navigate("Home");
   const handleSignup = () => navigation.navigate("RegistrationSteps");
@@ -27,6 +32,10 @@ const Registration = ({ navigation }) => {
   };
   const handleConfirm = (e) => {
     return setConfirmpw(e.target.value);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const titleHeader = [styles.topTitle, fs.montserrat, theme.txtColor];
@@ -58,6 +67,7 @@ const Registration = ({ navigation }) => {
             style={styles.inputStyle}
             onChangeText={(text) => setUsername(text)}
           />
+          <Image source={user} style={styles.icon} />
         </View>
       </View>
 
@@ -68,9 +78,16 @@ const Registration = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputStyle}
-            secureTextEntry={true}
+            secureTextEntry={!showPassword}
             onChangeText={(text) => setPassword(text)}
           />
+          <TouchableOpacity
+            onPress={togglePasswordVisibility}
+            style={styles.eyeIcon}
+          >
+            <Image source={showPassword ? view : hide} style={styles.icon} />
+          </TouchableOpacity>
+          <Image source={padlock} style={styles.icon} />
         </View>
       </View>
 
@@ -82,9 +99,16 @@ const Registration = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputStyle}
-            secureTextEntry={true}
+            secureTextEntry={!showPassword}
             onChangeText={(text) => setConfirmpw(text)}
           />
+          <TouchableOpacity
+            onPress={togglePasswordVisibility}
+            style={styles.eyeIcon}
+          >
+            <Image source={showPassword ? view : hide} style={styles.icon} />
+          </TouchableOpacity>
+          <Image source={padlock} style={styles.icon} />
         </View>
 
         <View style={styles.actionContainer}>

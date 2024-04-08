@@ -6,14 +6,7 @@ import MainContainer from "../../components/shared folder/containers/mainContain
 import useTheme from "../../hook/useTheme";
 import { global } from "../../styles/global";
 import SectionContainer from "../../components/shared folder/containers/sectionContainer/SectionContainer";
-import {
-  empName,
-  role,
-  email,
-  number,
-  buttons,
-  profileList,
-} from "../../data/Data";
+import { empName, role, email, number, skills } from "../../data/Data";
 
 const Profile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -64,14 +57,18 @@ const Profile = () => {
         </View>
       </View>
 
-      <SectionContainer header={"skills"}></SectionContainer>
-      <View style={styles.skillsContainer}>
-        {profileList.list.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.skillsList}>
-            <Text style={[styles.text, fs.agdasimaBold]}>{item.name}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+      <SectionContainer header={"skills"}>
+        <View style={styles.skillsContainer}>
+          {skills
+            .filter((category) => category.id === 1)
+            .flatMap((category) => category.list)
+            .map((skill, index) => (
+              <TouchableOpacity key={index} style={styles.skillsList}>
+                <Text style={[styles.text, fs.agdasimaBold]}>{skill.name}</Text>
+              </TouchableOpacity>
+            ))}
+        </View>
+      </SectionContainer>
 
       <SectionContainer header={"uploaded files"}></SectionContainer>
 
@@ -109,10 +106,9 @@ const Profile = () => {
             </Text>
           </View>
         </View>
-      </View>
-
-      <View style={styles.imageContainer}>
-        <Image source={emptyImage} style={styles.imageStyle}></Image>
+        <View style={styles.imageContainer}>
+          <Image source={emptyImage} style={styles.imageStyle}></Image>
+        </View>
       </View>
     </MainContainer>
   );

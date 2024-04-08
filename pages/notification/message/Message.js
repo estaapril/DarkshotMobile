@@ -1,12 +1,12 @@
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { styles } from "./styles";
-import logo from "../../../assets/images/darkshotLogo.png";
 import MainContainer from "../../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../../styles/global";
 import { useTheme } from "@react-navigation/native";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { mainNotif } from "../../../data/Data";
+import MainTabNavigator from "../../home/mainTab/MainTabNavigator";
 
 const Message = () => {
   const isDark = false;
@@ -17,10 +17,6 @@ const Message = () => {
     <MainContainer isDark={isDark} scrollable={false}>
       <SectionContainer header={"invitation"}>
         <View style={styles.mainContainer}>
-          <View style={styles.logoContainer}>
-            <Image source={logo} style={styles.logo}></Image>
-          </View>
-
           <View style={styles.container}>
             <View style={styles.headerContainer}>
               <Text style={[styles.header, fs.poppinsBold]}>

@@ -52,6 +52,7 @@ const Registration2 = ({}) => {
     <>
       <SectionContainer isDark={isDark} header={"files"}>
         <Text style={[styles.fileText, fs.poppins]}>{"resume"}</Text>
+
         <View style={styles.choosefileContainer}>
           <TouchableOpacity
             style={styles.fileInputButton}
@@ -59,6 +60,7 @@ const Registration2 = ({}) => {
           >
             <Text style={[styles.btnStyle, fs.poppins]}>{"choose file"}</Text>
           </TouchableOpacity>
+
           <View style={styles.fileNamePlaceholder}>
             <Text style={[styles.placeholder, fs.poppins]}>
               {selectedFile ? selectedFile.name : "my_resume_lastname.pdf"}
@@ -66,10 +68,12 @@ const Registration2 = ({}) => {
           </View>
         </View>
       </SectionContainer>
+
       <SectionContainer isDark={isDark} header={"portfolio"}>
         <Text style={[styles.fileText, fs.poppins]}>
           {"upload any previous works here"}
         </Text>
+
         <View style={styles.choosefileContainer}>
           <TouchableOpacity
             style={styles.fileInputButton}
@@ -78,15 +82,25 @@ const Registration2 = ({}) => {
             <Text style={[styles.btnStyle, fs.poppins]}>{"choose file"}</Text>
           </TouchableOpacity>
         </View>
+
         <Text style={[styles.previewText, fs.poppins]}>{"preview"}</Text>
+
         <View style={styles.imageContainer}>
           <Image source={brand} style={styles.image} />
           <Image source={brand} style={styles.image} />
         </View>
+
+        <View style={styles.designContainer}>
+          <View style={styles.design}></View>
+          <Text style={styles.fileText}>or</Text>
+          <View style={styles.design}></View>
+        </View>
+
         <View style={styles.filesContainer}>
           <Text style={[styles.fileText, fs.poppins]}>
             {"insert link of your portfolio"}
           </Text>
+
           <View style={styles.choosefileContainer}>
             <View style={styles.fileNamePlaceholder}>
               <Text style={[styles.placeholder, fs.poppins]}>

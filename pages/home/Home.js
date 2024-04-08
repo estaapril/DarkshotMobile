@@ -5,21 +5,23 @@ import MainContainer from "../../components/shared folder/containers/mainContain
 import SectionContainer from "../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { global } from "../../styles/global";
 import useTheme from "../../hook/useTheme";
-import { jobList } from "../../data/Data";
+import { skills } from "../../data/Data";
 
 const Home = () => {
   const isDark = false;
   const fs = global.customFonts;
   const { theme } = useTheme(isDark);
 
-  const JobListSection = ({ title, list }) => (
+  const SkillsSection = ({ category }) => (
     <>
       <View style={styles.titleContainer}>
-        <Text style={[styles.title, fs.poppinsMedium]}>{title}</Text>
+        <Text style={[styles.title, fs.poppinsMedium]}>
+          {category.category}
+        </Text>
       </View>
-      {list.map((item, index) => (
+      {category.list.map((item, index) => (
         <View style={styles.primaryColumn} key={index}>
-          <Text style={[styles.secondaryColumn, fs.poppins]}>{item}</Text>
+          <Text style={[styles.secondaryColumn, fs.poppins]}>{item.name}</Text>
           <TouchableOpacity style={styles.moreButton}>
             <Text>learn more</Text>
           </TouchableOpacity>
@@ -32,22 +34,19 @@ const Home = () => {
     <MainContainer isDark={isDark} scrollable={true} hasLogo={true}>
       <SectionContainer header={"careers"} subHeader={"(home based, hybrid)"}>
         <ScrollView horizontal={true} style={styles.categoryContainer}>
-          {jobList.categories.map((category, index) => (
+          {skills.map((category, index) => (
             <TouchableOpacity key={index}>
               <Text style={[styles.categoryButton, fs.poppinsMedium]}>
-                {category}
+                {category.category}
               </Text>
             </TouchableOpacity>
           ))}
         </ScrollView>
       </SectionContainer>
 
-      <JobListSection title={jobList.design.title} list={jobList.design.list} />
-      <JobListSection title={jobList.sales.title} list={jobList.sales.list} />
-      <JobListSection
-        title={jobList.writing.title}
-        list={jobList.writing.list}
-      />
+      {skills.map((category, index) => (
+        <SkillsSection key={index} category={category} />
+      ))}
     </MainContainer>
   );
 };

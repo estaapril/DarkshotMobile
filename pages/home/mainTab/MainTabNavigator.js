@@ -24,7 +24,11 @@ function MainTabNavigator() {
           }
 
           return (
-            <MaterialCommunityIcons name={iconName} size={size} color={color} />
+            <MaterialCommunityIcons
+              name={iconName}
+              size={size}
+              color={color}
+            ></MaterialCommunityIcons>
           );
         },
         tabBarActiveTintColor: "white",

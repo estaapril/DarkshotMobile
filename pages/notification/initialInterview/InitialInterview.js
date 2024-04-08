@@ -23,7 +23,10 @@ const Interview = () => {
       scrollable={false}
       hasFooter={false}
     >
-      <SectionContainer header={"invitation"}>
+      <SectionContainer
+        header={"interview invitation"}
+        subHeader={"(initial interview)"}
+      >
         <View>
           <View style={styles.messageContainer}>
             <Text style={[styles.text, fs.poppins]}>{interview.message}</Text>

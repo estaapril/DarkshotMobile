@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     borderRadius: 5,
-    paddingLeft: 35,
+    paddingLeft: 37,
   },
   normalText: {
     fontSize: 13,
@@ -54,5 +54,18 @@ export const styles = StyleSheet.create({
   activeLink: {
     fontSize: 13,
     textAlign: "right",
+  },
+  icon: {
+    position: "absolute",
+    left: 20,
+    top: 10,
+    width: 22,
+    height: 22,
+  },
+  eyeIcon: {
+    position: "absolute",
+    right: 40,
+    width: 22,
+    height: 22,
   },
 });

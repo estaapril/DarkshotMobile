@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { styles } from "./styles";
-import { View, Text, TextInput, Image } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import brand from "../../assets/images/darkshotproduction-logo.png";
 import brand2 from "../../assets/images/darkshot-logo-collapsed.png";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
 import Buttons from "../../components/shared folder/buttons/Buttons";
 import useTheme from "../../hook/useTheme";
-import Icon from "react-native-vector-icons/FontAwesome";
 import { Alert } from "react-native";
+import user from "../../assets/icons/user.png";
+import padlock from "../../assets/icons/padlock.png";
+import view from "../../assets/icons/view.png";
+import hide from "../../assets/icons/hide.png";
 
 const Login = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleUsername = (text) => {
     setUsername(text);
   };
@@ -20,6 +25,11 @@ const Login = ({ navigation }) => {
   const handlePassword = (text) => {
     setPassword(text);
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const [isLoading, setIsLoading] = useState(false);
   const isDark = true;
   const fs = global.customFonts;
@@ -75,12 +85,7 @@ const Login = ({ navigation }) => {
         </Text>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputStyle} onChangeText={handleUsername} />
-          <Icon
-            name="user"
-            size={22}
-            color="black"
-            style={{ position: "absolute", left: 20, top: 10 }}
-          />
+          <Image source={user} style={styles.icon} />
         </View>
       </View>
 
@@ -92,11 +97,18 @@ const Login = ({ navigation }) => {
           <TextInput
             style={styles.inputStyle}
             onChangeText={handlePassword}
-            secureTextEntry={true}
+            secureTextEntry={!showPassword}
           />
+          <TouchableOpacity
+            onPress={togglePasswordVisibility}
+            style={styles.eyeIcon}
+          >
+            <Image source={showPassword ? view : hide} style={styles.icon} />
+          </TouchableOpacity>
+          <Image source={padlock} style={styles.icon} />
         </View>
       </View>
-      <Text style={theme.txtColor}>{error ? error : "no error"}</Text>
+      {/* <Text style={theme.txtColor}>{error ? error : "no error"}</Text> */}
       <View style={styles.actionContainer}>
         <Buttons onPress={handleLogin}>{"Login"}</Buttons>
       </View>

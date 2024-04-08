@@ -32,95 +32,55 @@ export const registration1 = [
   },
 ];
 
-export const skills = {
-  titles: {
-    design: "design & creative",
-    sales: "sales & marketer",
-    writing: "writing & translation",
-  },
-  skillsList: [
-    { name: "graphic designers" },
-    { name: "logo designers" },
-    { name: "video post editing specialists" },
-    { name: "sound editors" },
-    { name: "video producers" },
-    { name: "motion graphics designers" },
-    { name: "2d animators" },
-    { name: "video editors" },
-    { name: "voice-over artists" },
-    { name: "illustrators" },
-    { name: "brand identity & guideline freelancers" },
-  ],
-};
-
 export const empName = "renz lagustan";
 export const role = "applicant";
 export const email = "renzylagustan@yahoo.com";
-export const number = "+639123456789";
+export const number = "+6391234567890";
 
-export const profileList = {
-  list: [
-    { name: "graphic designers" },
-    { name: "logo designers" },
-    { name: "video post editing specialists" },
-    { name: "sound editors" },
-    { name: "video producers" },
-    { name: "motion graphics designers" },
-    { name: "2D animators" },
-    { name: "video editors" },
-    { name: "voice-over artists" },
-    { name: "illustrators" },
-    { name: "brand identity & guideline freelancers" },
-  ],
-};
-
-export const jobList = {
-  design: {
-    title: "design & creative",
+export const skills = [
+  {
+    id: 1,
+    category: "design & creative",
     list: [
-      "graphic designers",
-      "logo designers",
-      "video post editing specialists",
-      "sound editors",
-      "video producers",
-      "motion graphics designers",
-      "2D animators",
-      "video editors",
-      "voice over artists",
-      "illustrators",
-      "brand identity & guideline\nfreelancers",
+      { name: "graphic designers" },
+      { name: "logo designers" },
+      { name: "video post editing specialists" },
+      { name: "sound editors" },
+      { name: "video producers" },
+      { name: "motion graphics designers" },
+      { name: "2d animators" },
+      { name: "video editors" },
+      { name: "voice-over artists" },
+      { name: "illustrators" },
+      { name: "brand identity & guideline freelancers" },
     ],
   },
-  sales: {
-    title: "sales & marketers",
+  {
+    id: 2,
+    category: "sales & marketer",
     list: [
-      "social media marketers",
-      "seo expert",
-      "social media managers",
-      "internet marketers",
-      "marketing strategists",
-      "campaign manager",
-      "influencer marketers",
+      { name: "social media marketers" },
+      { name: "seo expert" },
+      { name: "social media managers" },
+      { name: "internet marketers" },
+      { name: "marketing strategists" },
+      { name: "campaign manager" },
+      { name: "influencer marketers" },
     ],
   },
-  writing: {
-    title: "writing & translation",
+  {
+    id: 3,
+    category: "writing & translation",
     list: [
-      "article writers",
-      "content writers",
-      "english specialists",
-      "writers",
-      "researchers",
-      "social media content freelancers",
+      { name: "article writers" },
+      { name: "content writers" },
+      { name: "english specialists" },
+      { name: "writers" },
+      { name: "researchers" },
+      { name: "social media content freelancers" },
     ],
   },
-  categories: [
-    "all",
-    "design & creative",
-    "sales & marketers",
-    "writing & translation",
-  ],
-};
+];
 
 export const appData = {
   why: {

@@ -22,12 +22,17 @@ const Registration1 = () => {
     password: "",
   });
 
+  const [selectedId, setSelectedId] = useState(null);
+
   const handleDesign = () => navigation.navigate("");
 
   const renderTitles = () => {
-    return Object.values(skills.titles).map((title, index) => (
-      <TouchableOpacity key={index} onPress={handleDesign}>
-        <Text style={[styles.text, fs.agdasimaBold]}>{title}</Text>
+    return skills.map((category) => (
+      <TouchableOpacity
+        key={category.id}
+        onPress={() => setSelectedId(category.id)}
+      >
+        <Text style={[styles.text, fs.agdasimaBold]}>{category.category}</Text>
       </TouchableOpacity>
     ));
   };
@@ -66,21 +71,26 @@ const Registration1 = () => {
             {"(Choose at least 2 skills)"}
           </Text>
         </View>
+
+        <View style={styles.skillsHeader}>{renderTitles()}</View>
+
+        <View style={styles.skillsMainContainer}>
+          {selectedId &&
+            skills
+              .find((category) => category.id === selectedId)
+              ?.list.map((skill, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={styles.skillContainer}
+                  onPress={handleDesign}
+                >
+                  <Text style={[styles.text, fs.agdasimaBold]}>
+                    {skill.name}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+        </View>
       </SectionContainer>
-
-      <View style={styles.skillsHeader}>{renderTitles()}</View>
-
-      <View style={styles.skillsMainContainer}>
-        {skills.skillsList.map((skill, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.skillContainer}
-            onPress={handleDesign}
-          >
-            <Text style={[styles.text, fs.agdasimaBold]}>{skill.name}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
     </>
   );
 };
