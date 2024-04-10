@@ -7,6 +7,7 @@ import useTheme from "../../hook/useTheme";
 import { global } from "../../styles/global";
 import SectionContainer from "../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { empName, role, email, number, skills } from "../../data/Data";
+import CustomButton from "../../components/shared folder/buttons/CustomButton";
 
 const Profile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -108,6 +109,16 @@ const Profile = () => {
         </View>
         <View style={styles.imageContainer}>
           <Image source={emptyImage} style={styles.imageStyle}></Image>
+        </View>
+      </View>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row-reverse",
+        }}
+      >
+        <View style={{ width: 150 }}>
+          <CustomButton isSecondary label={"EDIT PROFILE"} />
         </View>
       </View>
     </MainContainer>

@@ -47,13 +47,13 @@ function App() {
             {/* <Stack.Screen name="Application" component={Application} /> */}
             {/* <Stack.Screen name="Profile" component={Profile} /> */}
             {/* <Stack.Screen name="Notification" component={Notification} /> */}
-            {/* <Stack.Screen name="Message" component={Message} /> */}
+            <Stack.Screen name="Message" component={Message} />
             {/* <Stack.Screen
               name="InitialInterview"
               component={InitialInterview}
             /> */}
             {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
-            <Stack.Screen name="InitialFeedback" component={InitialFeedback} />
+            {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
             {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
           </>
         </Stack.Group>

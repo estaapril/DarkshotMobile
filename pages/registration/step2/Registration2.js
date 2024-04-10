@@ -5,6 +5,7 @@ import brand from "../../../assets/images/emptyImage.png";
 import { global } from "../../../styles/global";
 import useTheme from "../../../hook/useTheme";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
+import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const Registration2 = ({}) => {
   const [link, setLink] = useState("");
@@ -109,6 +110,16 @@ const Registration2 = ({}) => {
                   : "https://drive.google.com/drive/folders/11gD ..."}
               </Text>
             </View>
+          </View>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View style={{ width: 210, marginTop: 50, marginRight: -16 }}>
+            <CustomButton isPrimary label={"SUBMIT APPLICATION"} />
           </View>
         </View>
       </SectionContainer>

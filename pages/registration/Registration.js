@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { styles } from "./styles";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
-import Buttons from "../../components/shared folder/buttons/Buttons";
+import CustomButton from "../../components/shared folder/buttons/CustomButton";
 import useTheme from "../../hook/useTheme";
 import user from "../../assets/icons/user.png";
 import padlock from "../../assets/icons/padlock.png";
@@ -17,27 +17,30 @@ const Registration = ({ navigation }) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmpw, setConfirmpw] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showConfirmPassword, setShowConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => navigation.navigate("Home");
   const handleSignup = () => navigation.navigate("RegistrationSteps");
   const handleSignin = () => navigation.navigate("Login");
 
-  const handleUsername = (e) => {
-    return setUsername(e.target.value);
+  const handleUsername = (text) => {
+    return setUsername(text);
   };
-  const handlePassword = (e) => {
-    return (setPassword = e.target.value);
+  const handlePassword = (text) => {
+    return setPassword(text);
   };
-  const handleConfirm = (e) => {
-    return setConfirmpw(e.target.value);
+  const handleConfirm = (text) => {
+    return setConfirmPassword(text);
   };
 
-  const togglePasswordVisibility = () => {
+  const togglePassword = () => {
     setShowPassword(!showPassword);
   };
-
+  const toggleConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
   const titleHeader = [styles.topTitle, fs.montserrat, theme.txtColor];
   return (
     <MainContainer
@@ -63,10 +66,7 @@ const Registration = ({ navigation }) => {
           {"Username"}
         </Text>
         <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.inputStyle}
-            onChangeText={(text) => setUsername(text)}
-          />
+          <TextInput style={styles.inputStyle} onChangeText={handleUsername} />
           <Image source={user} style={styles.icon} />
         </View>
       </View>
@@ -79,13 +79,13 @@ const Registration = ({ navigation }) => {
           <TextInput
             style={styles.inputStyle}
             secureTextEntry={!showPassword}
-            onChangeText={(text) => setPassword(text)}
+            onChangeText={handlePassword}
           />
-          <TouchableOpacity
-            onPress={togglePasswordVisibility}
-            style={styles.eyeIcon}
-          >
-            <Image source={showPassword ? view : hide} style={styles.icon} />
+          <TouchableOpacity onPress={togglePassword} style={styles.eyeIcon}>
+            <Image
+              source={showPassword ? view : hide}
+              style={[styles.icon, { tintColor: "gray" }]}
+            />
           </TouchableOpacity>
           <Image source={padlock} style={styles.icon} />
         </View>
@@ -99,20 +99,23 @@ const Registration = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputStyle}
-            secureTextEntry={!showPassword}
-            onChangeText={(text) => setConfirmpw(text)}
+            secureTextEntry={!showConfirmPassword}
+            onChangeText={handleConfirm}
           />
           <TouchableOpacity
-            onPress={togglePasswordVisibility}
+            onPress={toggleConfirmPassword}
             style={styles.eyeIcon}
           >
-            <Image source={showPassword ? view : hide} style={styles.icon} />
+            <Image
+              source={showConfirmPassword ? view : hide}
+              style={[styles.icon, { tintColor: "gray" }]}
+            />
           </TouchableOpacity>
           <Image source={padlock} style={styles.icon} />
         </View>
 
         <View style={styles.actionContainer}>
-          <Buttons onPress={handleSignup}>sign up</Buttons>
+          <CustomButton isPrimary label={"Sign up"} onPress={handleLogin} />
         </View>
 
         <View style={[styles.container, { paddingRight: 10 }]}>

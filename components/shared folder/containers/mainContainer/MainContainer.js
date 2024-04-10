@@ -58,6 +58,8 @@ const MainContainer = ({
         <ScrollView
           bounces={false}
           alwaysBounceVertical={false}
+          automaticallyAdjustKeyboardInsets={true}
+          automaticallyAdjustContentInsets={true}
           style={styles.scrollContainer}
         >
           {hasLogo || hasLogo == null ? (

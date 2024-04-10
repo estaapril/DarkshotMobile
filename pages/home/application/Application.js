@@ -7,6 +7,7 @@ import MainContainer from "../../../components/shared folder/containers/mainCont
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { appData } from "../../../data/Data";
 import useTheme from "../../../hook/useTheme";
+import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const stack = createStackNavigator();
 
@@ -50,6 +51,16 @@ const Application = () => {
             )}
           </View>
         ))}
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View style={{ width: 150 }}>
+            <CustomButton isSecondary label={"APPLY NOW"} />
+          </View>
+        </View>
       </SectionContainer>
     </MainContainer>
   );

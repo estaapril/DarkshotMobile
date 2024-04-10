@@ -76,4 +76,9 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     color: "#4B77E8",
   },
+  actionContainer: {
+    flexDirection: "row",
+    columnGap: 10,
+    display: "flex",
+  },
 });

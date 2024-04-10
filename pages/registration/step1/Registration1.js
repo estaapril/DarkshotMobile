@@ -7,6 +7,7 @@ import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
 import { registration1 } from "../../../data/Data";
 import { skills } from "../../../data/Data";
+import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const Registration1 = () => {
   const isDark = true;
@@ -89,6 +90,17 @@ const Registration1 = () => {
                   </Text>
                 </TouchableOpacity>
               ))}
+        </View>
+
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View style={{ width: 198, marginTop: 104 }}>
+            <CustomButton isPrimary label={"PROCEED TO STEP 2"} />
+          </View>
         </View>
       </SectionContainer>
     </>

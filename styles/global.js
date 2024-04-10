@@ -114,6 +114,6 @@ export const darkMode = StyleSheet.create({
     color: "#1C1C1C",
   },
   bgColor: {
-    backgroundColor: "#1C1C1C",
+    backgroundColor: "#000",
   },
 });

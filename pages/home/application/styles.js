@@ -19,4 +19,10 @@ export const styles = StyleSheet.create({
     rowGap: 20,
     marginBottom: 20,
   },
+  actionContainer: {
+    // position: "absolute",
+    paddingHorizontal: 10,
+    // marginTop: 45,
+    marginBottom: 18,
+  },
 });

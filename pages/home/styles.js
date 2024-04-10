@@ -30,11 +30,11 @@ export const styles = StyleSheet.create({
   moreButton: {
     borderWidth: 1,
     paddingHorizontal: 15,
-    paddingVertical: 5,
+    paddingVertical: 7,
     marginVertical: 10,
     borderRadius: 40,
     borderColor: "white",
-    backgroundColor: "#F3F5FB",
+    backgroundColor: "#E9EBF1",
   },
   primaryColumn: {
     flexDirection: "row",

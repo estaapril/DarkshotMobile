@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     borderRadius: 5,
     paddingLeft: 37,
+    paddingRight: 35,
   },
   normalText: {
     fontSize: 13,
@@ -57,15 +58,16 @@ export const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 20,
+    left: 17,
     top: 10,
     width: 22,
     height: 22,
   },
   eyeIcon: {
     position: "absolute",
-    right: 40,
+    right: 35,
     width: 22,
     height: 22,
+    tintColor: "yellow",
   },
 });

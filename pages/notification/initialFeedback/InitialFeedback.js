@@ -4,7 +4,8 @@ import SectionContainer from "../../../components/shared folder/containers/secti
 import useTheme from "../../../hook/useTheme";
 import { styles } from "./styles";
 import { global } from "../../../styles/global";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const InitialFeedback = () => {
   const isDark = false;
@@ -22,20 +23,21 @@ const InitialFeedback = () => {
         header={"interview feedback"}
         subHeader={"(initial screening)"}
       >
-        <View style={styles.mainContainer}>
-          <Text style={fs.poppins}>
-            How was the interview with *Applicantsname?
-          </Text>
+        <Text style={fs.poppins}>
+          How was the interview with *Applicantsname?
+        </Text>
 
-          <View style={styles.container} scrollable={true}>
-            <TextInput
-              style={(styles.text, fs.poppins)}
-              placeholder="Compose a message here..."
-              placeholderTextColor="gray"
-              multiline={true}
-            ></TextInput>
-          </View>
+        <View style={styles.container}>
+          <TextInput
+            style={[styles.text, fs.poppins, { width: "100%" }]}
+            placeholder="Compose a message here..."
+            placeholderTextColor="gray"
+            multiline={true}
+          ></TextInput>
         </View>
+        <TouchableOpacity>
+          <Text>Reject</Text>
+        </TouchableOpacity>
       </SectionContainer>
     </MainContainer>
   );

@@ -7,6 +7,7 @@ import { useTheme } from "@react-navigation/native";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { mainNotif } from "../../../data/Data";
 import MainTabNavigator from "../../home/mainTab/MainTabNavigator";
+import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const Message = () => {
   const isDark = false;
@@ -41,7 +42,7 @@ const Message = () => {
         <View style={styles.clickContainer}>
           <Text style={[styles.text, fs.inter]}>{mainNotif.click}</Text>
         </View>
-
+        {/* 
         <View style={styles.btnContainer}>
           <View style={styles.btncolumn}>
             <TouchableOpacity style={styles.buttonStyles}>
@@ -52,6 +53,11 @@ const Message = () => {
               <Text style={fs.inter}>{mainNotif.buttonNo}</Text>
             </TouchableOpacity>
           </View>
+        </View> */}
+
+        <View style={styles.actionContainer}>
+          <CustomButton isTertiaryLight label={"Yes, I am available"} />
+          <CustomButton isTertiaryLight label={"No, I am not available"} />
         </View>
 
         <View style={styles.btnSubmitContainer}>

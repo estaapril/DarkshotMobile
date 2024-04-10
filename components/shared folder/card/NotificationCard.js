@@ -3,6 +3,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
+import CustomButton from "../buttons/CustomButton";
 
 const NotificationCard = ({ isDark, name, position, message }) => {
   const { theme } = useTheme(isDark);

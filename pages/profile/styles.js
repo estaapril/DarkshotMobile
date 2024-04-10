@@ -99,6 +99,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 10,
     display: "flex",
+    marginBottom: 40,
   },
   buttonContainer: {
     top: 40,

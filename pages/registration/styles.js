@@ -46,14 +46,14 @@ export const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 20,
+    left: 17,
     top: 10,
     width: 22,
     height: 22,
   },
   eyeIcon: {
     position: "absolute",
-    right: 40,
+    right: 35,
     width: 22,
     height: 22,
   },

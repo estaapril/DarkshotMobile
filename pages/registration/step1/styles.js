@@ -35,6 +35,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     columnGap: 10,
     marginBottom: 20,
+    justifyContent: "center",
   },
   text: {
     textTransform: "uppercase",

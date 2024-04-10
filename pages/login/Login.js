@@ -5,7 +5,7 @@ import brand from "../../assets/images/darkshotproduction-logo.png";
 import brand2 from "../../assets/images/darkshot-logo-collapsed.png";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
-import Buttons from "../../components/shared folder/buttons/Buttons";
+import CustomButton from "../../components/shared folder/buttons/CustomButton";
 import useTheme from "../../hook/useTheme";
 import { Alert } from "react-native";
 import user from "../../assets/icons/user.png";
@@ -39,29 +39,6 @@ const Login = ({ navigation }) => {
 
   const handleLogin = async () => {
     const data = { username: username, password: password };
-    const url = "http://localhost:3001/api/user/login";
-
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Additional headers if needed
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.status === 200) {
-        const responseData = await response.json();
-        console.debug(responseData);
-        // Handle successful login response
-      } else {
-        throw new Error("Something went wrong on API server!");
-      }
-    } catch (error) {
-      console.error(error);
-      // Handle error
-    }
   };
 
   return (
@@ -69,7 +46,7 @@ const Login = ({ navigation }) => {
       isDark={isDark}
       hasLogo={false}
       isCentered={true}
-      scrollable={false}
+      scrollable={true}
       hasFooter={false}
     >
       <View style={styles.contentContainer}>
@@ -103,14 +80,17 @@ const Login = ({ navigation }) => {
             onPress={togglePasswordVisibility}
             style={styles.eyeIcon}
           >
-            <Image source={showPassword ? view : hide} style={styles.icon} />
+            <Image
+              source={showPassword ? view : hide}
+              style={[styles.icon, { tintColor: "gray" }]}
+            />
           </TouchableOpacity>
           <Image source={padlock} style={styles.icon} />
         </View>
       </View>
-      {/* <Text style={theme.txtColor}>{error ? error : "no error"}</Text> */}
+
       <View style={styles.actionContainer}>
-        <Buttons onPress={handleLogin}>{"Login"}</Buttons>
+        <CustomButton isPrimary label={"Login"} onPress={handleLogin} />
       </View>
 
       <View style={[styles.container, { paddingRight: 10 }]}>

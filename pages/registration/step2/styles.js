@@ -58,10 +58,11 @@ export const styles = StyleSheet.create({
   },
   designContainer: {
     flexDirection: "row",
-    columnGap: 15,
+    columnGap: 30,
     alignItems: "center",
     flex: 3,
     display: "flex",
+    marginVertical: 18,
   },
   design: {
     flex: 1,

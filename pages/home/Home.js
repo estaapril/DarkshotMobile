@@ -6,6 +6,7 @@ import SectionContainer from "../../components/shared folder/containers/sectionC
 import { global } from "../../styles/global";
 import useTheme from "../../hook/useTheme";
 import { skills } from "../../data/Data";
+import CustomButton from "../../components/shared folder/buttons/CustomButton";
 
 const Home = () => {
   const isDark = false;
