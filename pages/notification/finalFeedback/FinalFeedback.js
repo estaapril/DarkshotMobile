@@ -4,7 +4,7 @@ import SectionContainer from "../../../components/shared folder/containers/secti
 import useTheme from "../../../hook/useTheme";
 import { styles } from "./styles";
 import { global } from "../../../styles/global";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
 const FinalFeedback = () => {
   const isDark = false;
@@ -22,19 +22,31 @@ const FinalFeedback = () => {
         header={"interview feedback"}
         subHeader={"(final screening)"}
       >
-        <View style={styles.mainContainer}>
-          <Text style={fs.poppins}>
-            How was the interview with *Applicantsname?
-          </Text>
+        <Text style={fs.poppins}>
+          How was the interview with *Applicantsname?
+        </Text>
 
-          <View style={styles.container} scrollable={true}>
-            <TextInput
-              style={(styles.text, fs.poppins)}
-              placeholder="Compose a message here..."
-              placeholderTextColor="gray"
-              multiline={true}
-            ></TextInput>
-          </View>
+        <View style={styles.container} scrollable={true}>
+          <TextInput
+            style={[fs.poppins, { width: "100%" }]}
+            placeholder="Compose a message here..."
+            placeholderTextColor="gray"
+            multiline={true}
+          ></TextInput>
+        </View>
+
+        <View style={styles.btnContainer}>
+          <TouchableOpacity style={styles.buttonStyles}>
+            <Text style={[styles.button, fs.poppinsBold]}>Reject</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.buttonStyles, { backgroundColor: "black" }]}
+          >
+            <Text style={[styles.button, fs.poppinsBold, { color: "white" }]}>
+              Hire
+            </Text>
+          </TouchableOpacity>
         </View>
       </SectionContainer>
     </MainContainer>

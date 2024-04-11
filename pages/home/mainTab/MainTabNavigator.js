@@ -1,9 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
-import Home from "../Home";
-import Profile from "../../profile/Profile";
-import Notification from "../../notification/Notification";
+import Message from "../../notification/message/Message";
 import { styles } from "./styles";
 
 const Tab = createBottomTabNavigator();
@@ -14,7 +12,6 @@ function MainTabNavigator() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
-
           if (route.name === "Home") {
             iconName = "home";
           } else if (route.name === "Notification") {
@@ -22,7 +19,6 @@ function MainTabNavigator() {
           } else if (route.name === "Profile") {
             iconName = "account";
           }
-
           return (
             <MaterialCommunityIcons
               name={iconName}
@@ -37,24 +33,8 @@ function MainTabNavigator() {
       })}
     >
       <Tab.Screen
-        name="Notification"
-        component={Notification}
-        options={{
-          headerShown: false,
-          tabBarLabel: "",
-        }}
-      />
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-          tabBarLabel: "",
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Message"
+        component={Message}
         options={{
           headerShown: false,
           tabBarLabel: "",

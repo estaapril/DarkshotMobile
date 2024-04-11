@@ -5,7 +5,6 @@ import useTheme from "../../../hook/useTheme";
 import { styles } from "./styles";
 import { global } from "../../../styles/global";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const InitialFeedback = () => {
   const isDark = false;
@@ -29,15 +28,28 @@ const InitialFeedback = () => {
 
         <View style={styles.container}>
           <TextInput
-            style={[styles.text, fs.poppins, { width: "100%" }]}
+            style={[fs.poppins, { width: "100%" }]}
             placeholder="Compose a message here..."
             placeholderTextColor="gray"
             multiline={true}
           ></TextInput>
         </View>
-        <TouchableOpacity>
-          <Text>Reject</Text>
-        </TouchableOpacity>
+
+        <View style={styles.btnContainer}>
+          <TouchableOpacity style={styles.buttonStyles}>
+            <Text style={[styles.buttonText, fs.poppinsBold]}>Reject</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.buttonStyles, { backgroundColor: "black" }]}
+          >
+            <Text
+              style={[styles.buttonText, fs.poppinsBold, { color: "white" }]}
+            >
+              Approve
+            </Text>
+          </TouchableOpacity>
+        </View>
       </SectionContainer>
     </MainContainer>
   );

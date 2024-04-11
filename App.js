@@ -25,37 +25,24 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* {user && <Stack.Screen name="MainTabs" component={MainTabNavigator} />} */}
-        {/* <Stack.Screen
-          name="MainTabs"
-          component={MainTabNavigator}
-        ></Stack.Screen> */}
+        {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
+
         <Stack.Group>
-          {/* {!user && ( */}
-          <>
-            {/* <Stack.Screen name="Login" component={Login} /> */}
-            {/* <Stack.Screen name="Registration" component={Registration} /> */}
-            {/* <Stack.Screen
-              name="RegistrationSteps"
-              component={RegistrationSteps}
-            ></Stack.Screen> */}
-          </>
-          {/* )} */}
-          {/* {user && ( */}
-          <>
-            {/* <Stack.Screen name="Home" component={Home} /> */}
-            {/* <Stack.Screen name="Application" component={Application} /> */}
-            {/* <Stack.Screen name="Profile" component={Profile} /> */}
-            {/* <Stack.Screen name="Notification" component={Notification} /> */}
-            <Stack.Screen name="Message" component={Message} />
-            {/* <Stack.Screen
-              name="InitialInterview"
-              component={InitialInterview}
-            /> */}
-            {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
-            {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
-            {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
-          </>
+          {/* <Stack.Screen name="Login" component={Login} /> */}
+          {/* <Stack.Screen name="Registration" component={Registration} /> */}
+          {/* <Stack.Screen
+            name="RegistrationSteps"
+            component={RegistrationSteps}
+          ></Stack.Screen> */}
+          {/* <Stack.Screen name="Home" component={Home} /> */}
+          {/* <Stack.Screen name="Application" component={Application} /> */}
+          {/* <Stack.Screen name="Profile" component={Profile} /> */}
+          {/* <Stack.Screen name="Notification" component={Notification} /> */}
+          {/* <Stack.Screen name="Message" component={Message} /> */}
+          {/* <Stack.Screen name="InitialInterview" component={InitialInterview} /> */}
+          {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
+          {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
+          <Stack.Screen name="FinalFeedback" component={FinalFeedback} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

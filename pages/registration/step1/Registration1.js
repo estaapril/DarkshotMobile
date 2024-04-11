@@ -23,7 +23,7 @@ const Registration1 = () => {
     password: "",
   });
 
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(1);
 
   const handleDesign = () => navigation.navigate("");
 

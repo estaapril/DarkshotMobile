@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   body: {
     paddingTop: 10,
     paddingBottom: 20,
-    paddingStart: 50,
+    paddingStart: 55,
     paddingEnd: 15,
   },
   footer: {
@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
   },
   message: {
     fontFamily: "Inter-Regular",
-    fontSize: 15,
+    fontSize: 13.5,
   },
   duration: {
     color: "#212599",

@@ -11,8 +11,20 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: "row",
   },
-  text: {
-    display: "flex",
-    textWrap: "nowrap",
+  btnContainer: {
+    flexDirection: "row",
+    columnGap: 20,
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  buttonStyles: {
+    borderWidth: 1.5,
+    borderColor: "black",
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 14,
   },
 });

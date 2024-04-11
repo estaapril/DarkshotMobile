@@ -16,10 +16,6 @@ export const mainNotif = {
   id: "Zoom id: 23mxcknx",
   pin: "Zoom pin: 124232",
   link: "Zoom link: https://zoom.us",
-  note: "Note: Please be ready 10 minutes before the scheduled time.",
-  click: "Click on your response to this email",
-  buttonYes: "Yes, I am available",
-  buttonNo: "No, I am not available",
 };
 
 export const registration1 = [

@@ -1,13 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  mainContainer: {
-    display: "flex",
-    borderColor: "red",
-    borderWidth: 2,
-    marginTop: 10,
-    width: 300,
-  },
   container: {
     borderWidth: 1.5,
     borderColor: "gray",
@@ -17,9 +10,21 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     flexDirection: "row",
-    flexWrap: "wrap",
   },
-  text: {
-    display: "flex",
+  btnContainer: {
+    flexDirection: "row",
+    columnGap: 20,
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  buttonStyles: {
+    borderWidth: 1.5,
+    borderColor: "black",
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 14,
   },
 });
