@@ -25,8 +25,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
-
+        <Stack.Screen name="MainTabs" component={MainTabNavigator} />
         <Stack.Group>
           {/* <Stack.Screen name="Login" component={Login} /> */}
           {/* <Stack.Screen name="Registration" component={Registration} /> */}
@@ -42,11 +41,10 @@ function App() {
           {/* <Stack.Screen name="InitialInterview" component={InitialInterview} /> */}
           {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
           {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
-          <Stack.Screen name="FinalFeedback" component={FinalFeedback} />
+          {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 export default App;

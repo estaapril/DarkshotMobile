@@ -1,5 +1,5 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
 import { styles } from "../application/styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { global } from "../../../styles/global";
@@ -16,10 +16,48 @@ const Application = () => {
   const fs = global.customFonts;
   const { theme } = useTheme(isDark);
 
+  const [responsibilitiesVisible, setResponsibilitiesVisible] = useState(false);
+
+  const toggleResponsibilities = () => {
+    setResponsibilitiesVisible(!responsibilitiesVisible);
+  };
+
+  const renderResponsibilitiesSection = () => {
+    const section = {
+      ...appData.responsibilities,
+      list: appData.responsibilities.list,
+    };
+
+    return (
+      <View style={styles.contentContainer}>
+        <Text style={[styles.title, fs.poppinsBold]}>{section.title}</Text>
+        <TouchableOpacity onPress={toggleResponsibilities}>
+          <Text style={[styles.description, fs.poppins]}>
+            {appData.responsibilities.title}
+          </Text>
+        </TouchableOpacity>
+        {responsibilitiesVisible && (
+          <View>
+            {section.list.map((item, itemIndex) => (
+              <Text
+                key={itemIndex}
+                style={[styles.description, fs.poppins]}
+                paddingStart={8}
+                marginVertical={1.5}
+              >
+                {item}
+              </Text>
+            ))}
+          </View>
+        )}
+      </View>
+    );
+  };
+
   const sections = [
     { ...appData.why },
     { ...appData.what },
-    { ...appData.responsibilities, list: appData.responsibilities.list },
+    renderResponsibilitiesSection(),
     { ...appData.requirements, list: appData.requirements.list },
     { ...appData.benefits, list: appData.benefits.list },
     { ...appData.hiringProcess, list: appData.hiringProcess.list },

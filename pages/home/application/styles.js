@@ -20,9 +20,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
   actionContainer: {
-    // position: "absolute",
     paddingHorizontal: 10,
-    // marginTop: 45,
     marginBottom: 18,
   },
 });

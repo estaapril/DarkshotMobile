@@ -6,6 +6,7 @@ import { global } from "../../../styles/global";
 import { useTheme } from "@react-navigation/native";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { mainNotif } from "../../../data/Data";
+import MainTabNavigator from "../../home/mainTab/MainTabNavigator";
 
 const Message = () => {
   const isDark = false;
