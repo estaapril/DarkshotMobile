@@ -25,9 +25,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="MainTabs" component={MainTabNavigator} />
+        {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
         <Stack.Group>
-          {/* <Stack.Screen name="Login" component={Login} /> */}
+          <Stack.Screen name="Login" component={Login} />
           {/* <Stack.Screen name="Registration" component={Registration} /> */}
           {/* <Stack.Screen
             name="RegistrationSteps"

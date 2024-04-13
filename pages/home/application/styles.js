@@ -23,4 +23,12 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 18,
   },
+  dropdownIcon: {
+    fontSize: 20,
+    marginLeft: 5,
+  },
+  dropdownHeader: {
+    flexDirection: "row",
+    columnGap: 20,
+  },
 });
