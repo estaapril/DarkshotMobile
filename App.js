@@ -7,6 +7,7 @@ import Registration1 from "./pages/registration/step1/Registration1";
 import Registration2 from "./pages/registration/step2/Registration2";
 import Application from "./pages/home/application/Application";
 import Profile from "./pages/profile/Profile";
+import EditProfile from "./pages/profile/editProfile/EditProfile";
 import Home from "./pages/home/Home";
 import Notification from "./pages/notification/Notification";
 import InitialInterview from "./pages/notification/initialInterview/InitialInterview";
@@ -27,7 +28,7 @@ function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
         <Stack.Group>
-          <Stack.Screen name="Login" component={Login} />
+          {/* <Stack.Screen name="Login" component={Login} /> */}
           {/* <Stack.Screen name="Registration" component={Registration} /> */}
           {/* <Stack.Screen
             name="RegistrationSteps"
@@ -35,13 +36,15 @@ function App() {
           ></Stack.Screen> */}
           {/* <Stack.Screen name="Home" component={Home} /> */}
           {/* <Stack.Screen name="Application" component={Application} /> */}
-          {/* <Stack.Screen name="Profile" component={Profile} /> */}
           {/* <Stack.Screen name="Notification" component={Notification} /> */}
           {/* <Stack.Screen name="Message" component={Message} /> */}
           {/* <Stack.Screen name="InitialInterview" component={InitialInterview} /> */}
           {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
           {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
           {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
+          {/* <Stack.Screen name="Profile" component={Profile} /> */}
+          {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
+          <Stack.Screen name="Portfolio" component={Portfolio} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

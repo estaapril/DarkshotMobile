@@ -28,10 +28,10 @@ export const registration1 = [
   },
 ];
 
-export const empName = "renz lagustan";
-export const role = "applicant";
-export const email = "renzylagustan@yahoo.com";
-export const number = "+6391234567890";
+export const empName = "alfredo John r. lera iii";
+export const role = "admin";
+export const email = "Email: leraajr@gmail.com";
+export const number = "Contact Number: 09456853215";
 
 export const skills = [
   {
