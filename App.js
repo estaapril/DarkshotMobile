@@ -18,6 +18,10 @@ import RegistrationSteps from "./pages/registration/registrationSteps/Registrati
 import Test from "./pages/test/Test";
 import InitialFeedback from "./pages/notification/initialFeedback/InitialFeedback";
 import FinalFeedback from "./pages/notification/finalFeedback/FinalFeedback";
+import Portfolio from "./pages/profile/portfolio/Portfolio";
+import OpenImage from "./pages/profile/viewImage/OpenImage";
+import EditPortfolio from "./pages/profile/editPortfolio/EditPortfolio";
+import EditSkills from "./pages/profile/editSkills/editSkills";
 
 const Stack = createNativeStackNavigator();
 // const user = false;
@@ -44,7 +48,10 @@ function App() {
           {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
           {/* <Stack.Screen name="Profile" component={Profile} /> */}
           {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
-          <Stack.Screen name="Portfolio" component={Portfolio} />
+          {/* <Stack.Screen name="Portfolio" component={Portfolio} /> */}
+          {/* <Stack.Screen name="OpenImage" component={OpenImage} /> */}
+          {/* <Stack.Screen name="EditPortfolio" component={EditPortfolio} /> */}
+          <Stack.Screen name="EditSkills" component={EditSkills} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

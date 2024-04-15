@@ -2,15 +2,15 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    marginBottom: 50,
-    marginTop: 100,
+    display: "flex",
+    alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
+    marginHorizontal: -20,
   },
   image: {
-    width: 154,
-    height: 120,
+    width: "100%",
+    height: 300,
     marginBottom: 10,
     borderRadius: 5,
   },
