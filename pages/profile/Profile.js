@@ -1,59 +1,74 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 import { styles } from "../profile/styles";
 import emptyImage from "../../assets/images/emptyImage.png";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import useTheme from "../../hook/useTheme";
 import { global } from "../../styles/global";
 import SectionContainer from "../../components/shared folder/containers/sectionContainer/SectionContainer";
-import { empName, role, email, number, skills } from "../../data/Data";
+import { skills } from "../../data/Data";
 
-const Profile = () => {
+import useAuthToken from "../../hook/useAuthToken"; // Import the useAuthToken hook
+import useFetchCurrentUser from "../../hook/useFetchCurrentUser";
+
+const Profile = ({ navigation, route }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedFile2, setSelectedFile2] = useState(null);
-
-  const handleFilePick = async () => {
-    try {
-      const res = await DocumentPicker.pick({
-        type: [DocumentPicker.types.allFiles],
-      });
-      setSelectedFile(res);
-    } catch (err) {
-      if (DocumentPicker.isCancel(err)) {
-        console.log("");
-      } else {
-        console.log(err);
-      }
-    }
-  };
-  // const handleFilePick2 = async () => {
-  //   try {
-  //     const res = await DocumentPicker.pick({
-  //       type: [DocumentPicker.types.allFiles],
-  //     });
-  //     setSelectedFile2(res);
-  //   } catch (err) {
-  //     if (DocumentPicker.isCancel(err)) {
-  //       console.log("");
-  //     } else {
-  //       console.log(err);
-  //     }
-  //   }
-  // };
   const isDark = false;
   const fs = global.customFonts;
   const { theme } = useTheme(isDark);
-
+  const { removeToken } = useAuthToken();
+  const { user, isLoading } = useFetchCurrentUser();
+  const handleLogout = () => {
+    removeToken("token");
+    navigation.navigate("Login");
+  };
+  const loadingState = isLoading ? "Loading ..." : user;
   return (
     <MainContainer isDark={isDark}>
       <SectionContainer header={"profile"}></SectionContainer>
       <View style={styles.applicantMain}>
         <Image source={emptyImage} style={styles.imageProfile}></Image>
-        <View style={styles.applicantdetails}>
-          <Text style={[styles.applicantName, fs.poppinsBold]}>{empName}</Text>
-          <Text style={[styles.applicantRole, fs.poppins]}>{role}</Text>
-          <Text style={[styles.applicantContacts, fs.poppins]}>{email}</Text>
-          <Text style={[styles.applicantContacts, fs.poppins]}>{number}</Text>
+        <View
+          style={[
+            styles.applicantdetails,
+            isLoading && {
+              justifyContent: "center",
+              alignItems: "center",
+            },
+          ]}>
+          {isLoading ? (
+            <ActivityIndicator color="#000" size={"large"} />
+          ) : (
+            <>
+              <Text style={[styles.applicantName, fs.poppinsBold]}>
+                {isLoading ? "Loading ..." : user ? user?.fullName : "No user"}
+              </Text>
+              <Text style={[styles.applicantRole, fs.poppins]}>
+                {isLoading
+                  ? "Loading ..."
+                  : user?.position == 1
+                  ? "Admin"
+                  : user?.position == 2
+                  ? "Client"
+                  : user?.position == 3
+                  ? "Applicant"
+                  : "No user"}
+              </Text>
+              <Text style={[styles.applicantContacts, fs.poppins]}>
+                {isLoading ? "Loading ..." : user ? user?.email : "No user"}
+              </Text>
+              <Text style={[styles.applicantContacts, fs.poppins]}>
+                {isLoading ? "Loading ..." : user ? user?.contact : "No user"}
+              </Text>
+            </>
+          )}
         </View>
       </View>
 
@@ -75,10 +90,7 @@ const Profile = () => {
       <View style={styles.filesContainer}>
         <Text style={[styles.fileText, fs.poppins]}>{"resume"}</Text>
         <View style={styles.choosefileContainer}>
-          <TouchableOpacity
-            style={styles.fileInputButton}
-            onPress={handleFilePick}
-          >
+          <TouchableOpacity style={styles.fileInputButton}>
             <Text style={[styles.btnStyle, fs.poppins]}>{"choose file"}</Text>
           </TouchableOpacity>
           <View style={styles.fileNamePlaceholder}>
@@ -94,10 +106,7 @@ const Profile = () => {
           {"upload your previous works here"}
         </Text>
         <View style={styles.choosefileContainer}>
-          <TouchableOpacity
-            style={styles.fileInputButton}
-            onPress={handleFilePick}
-          >
+          <TouchableOpacity style={styles.fileInputButton}>
             <Text style={[styles.btnStyle, fs.poppins]}>{"choose file"}</Text>
           </TouchableOpacity>
           <View style={styles.fileNamePlaceholder}>
@@ -110,6 +119,9 @@ const Profile = () => {
           <Image source={emptyImage} style={styles.imageStyle}></Image>
         </View>
       </View>
+      <TouchableOpacity onPress={handleLogout}>
+        <Text>Logout</Text>
+      </TouchableOpacity>
     </MainContainer>
   );
 };

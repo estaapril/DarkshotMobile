@@ -1,91 +1,68 @@
 import React, { useState } from "react";
-import { styles } from "./styles";
 import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
-import brand from "../../assets/images/darkshotproduction-logo.png";
-import brand2 from "../../assets/images/darkshot-logo-collapsed.png";
-import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
+// STYLES
+import { styles } from "./styles";
 import { global } from "../../styles/global";
+// COMPONENTS
+import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import Buttons from "../../components/shared folder/buttons/Buttons";
+// HOOKS
+import useLogin from "../../hook/useLogin";
 import useTheme from "../../hook/useTheme";
-import { Alert } from "react-native";
-import user from "../../assets/icons/user.png";
-import padlock from "../../assets/icons/padlock.png";
-import view from "../../assets/icons/view.png";
-import hide from "../../assets/icons/hide.png";
+// ASSETS
+import brandImage1 from "../../assets/images/darkshot-logo-collapsed.png";
+import brandImage2 from "../../assets/images/darkshotproduction-logo.png";
+import userIcon from "../../assets/icons/user.png";
+import lockIcon from "../../assets/icons/padlock.png";
+import viewIcon from "../../assets/icons/view.png";
+import hideIcon from "../../assets/icons/hide.png";
 
-const Login = ({ navigation }) => {
+const Login = ({ route, navigation }) => {
+  // STYLES
+  const isDark = true;
+  const { theme } = useTheme(isDark);
+  const fs = global.customFonts;
+  // USE HOOK
+  const { handleLogin } = useLogin();
+  // VARIABLES
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  // VARIABLE HANDLERS
   const handleUsername = (text) => {
     setUsername(text);
   };
-
   const handlePassword = (text) => {
     setPassword(text);
   };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const togglePassword = () => {
+    setPasswordVisible(!passwordVisible);
   };
-
-  const [isLoading, setIsLoading] = useState(false);
-  const isDark = true;
-  const fs = global.customFonts;
-  const { theme } = useTheme(isDark);
-  const [error, setError] = useState(null);
-  const handleSignup = () => navigation.navigate("Registration");
-
-  const handleLogin = async () => {
-    const data = { username: username, password: password };
-    const url = "http://localhost:3001/api/user/login";
-
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Additional headers if needed
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.status === 200) {
-        const responseData = await response.json();
-        console.debug(responseData);
-        // Handle successful login response
-      } else {
-        throw new Error("Something went wrong on API server!");
-      }
-    } catch (error) {
-      console.error(error);
-      // Handle error
-    }
+  // FUNCTIONS
+  const handleSignup = () => {};
+  const handleSubmit = () => {
+    handleLogin(username, password, navigation);
   };
-
   return (
     <MainContainer
       isDark={isDark}
       hasLogo={false}
       isCentered={true}
-      scrollable={false}
-      hasFooter={false}
-    >
+      scrollable={true}
+      hasFooter={false}>
       <View style={styles.contentContainer}>
         <View style={styles.mainlogoContainer}>
-          <Image source={brand2} style={styles.brand2} />
-          <Image source={brand} style={styles.brand} />
+          <Image source={brandImage1} style={styles.brand2} />
+          <Image source={brandImage2} style={styles.brand} />
         </View>
       </View>
-
       <View style={styles.container}>
         <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
           {"Username"}
         </Text>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputStyle} onChangeText={handleUsername} />
-          <Image source={user} style={styles.icon} />
+          <Image source={userIcon} style={styles.icon} />
         </View>
       </View>
 
@@ -97,20 +74,20 @@ const Login = ({ navigation }) => {
           <TextInput
             style={styles.inputStyle}
             onChangeText={handlePassword}
-            secureTextEntry={!showPassword}
+            secureTextEntry={!passwordVisible}
           />
-          <TouchableOpacity
-            onPress={togglePasswordVisibility}
-            style={styles.eyeIcon}
-          >
-            <Image source={showPassword ? view : hide} style={styles.icon} />
+          <TouchableOpacity onPress={togglePassword} style={styles.eyeIcon}>
+            <Image
+              source={passwordVisible ? viewIcon : hideIcon}
+              style={styles.icon}
+            />
           </TouchableOpacity>
-          <Image source={padlock} style={styles.icon} />
+          <Image source={lockIcon} style={styles.icon} />
         </View>
       </View>
       {/* <Text style={theme.txtColor}>{error ? error : "no error"}</Text> */}
       <View style={styles.actionContainer}>
-        <Buttons onPress={handleLogin}>{"Login"}</Buttons>
+        <Buttons onPress={handleSubmit}>{"Login"}</Buttons>
       </View>
 
       <View style={[styles.container, { paddingRight: 10 }]}>
@@ -118,8 +95,7 @@ const Login = ({ navigation }) => {
           {"Don't have an account?" + " "}
           <Text
             style={[styles.activeLink, fs.poppinsBold]}
-            onPress={handleSignup}
-          >
+            onPress={handleSignup}>
             {"Sign up here"}
           </Text>
         </Text>

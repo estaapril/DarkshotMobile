@@ -142,3 +142,48 @@ export const interview = {
   passcodeLabel: "Passcode:",
   passcode: "5gKXn5",
 };
+
+export const RegistrationSkills = [
+  {
+    id: 1,
+    category: "design & creative",
+    job: [
+      { item: "graphic designers" },
+      { item: "logo designers" },
+      { item: "video post editing specialists" },
+      { item: "sound editors" },
+      { item: "video producers" },
+      { item: "motion graphics designers" },
+      { item: "2d animators" },
+      { item: "video editors" },
+      { item: "voice-over artists" },
+      { item: "illustrators" },
+      { item: "brand identity & guideline freelancers" },
+    ],
+  },
+  {
+    id: 2,
+    category: "sales & marketer",
+    job: [
+      { item: "social media marketers" },
+      { item: "seo expert" },
+      { item: "social media managers" },
+      { item: "internet marketers" },
+      { item: "marketing strategists" },
+      { item: "campaign manager" },
+      { item: "influencer marketers" },
+    ],
+  },
+  {
+    id: 3,
+    category: "writing & translation",
+    job: [
+      { item: "article writers" },
+      { item: "content writers" },
+      { item: "english specialists" },
+      { item: "writers" },
+      { item: "researchers" },
+      { item: "social media content freelancers" },
+    ],
+  },
+];

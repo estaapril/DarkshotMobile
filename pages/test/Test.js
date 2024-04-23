@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import React, { useState } from "react";
+import { Text, View, TouchableOpacity } from "react-native";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 
 const Test = () => {
-  const [data, setData] = useState(null);
-  const fetchUsers = async () => {
-    const url = "https://darkshot-server.onrender.com" + "/api/users";
-    const response = await fetch(url, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    const data = await response.json();
-    setData(data);
-  };
-
-  useEffect(() => {
-    fetchUsers();
-  }, [data]);
+  const [toggle, setToggle] = useState(false);
 
   return (
     <MainContainer>
-      <Text>Users:</Text>
-      {data ? data : <Text>No results</Text>}
+      <TouchableOpacity onPress={() => setToggle(!toggle)}>
+        <Text>Title</Text>
+      </TouchableOpacity>
+      {toggle && (
+        <View>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            molestias inventore soluta modi, commodi quibusdam? Enim maxime
+            iusto labore, laudantium quibusdam eaque similique explicabo, dicta
+            itaque tenetur magnam? Perferendis, nobis?{" "}
+          </Text>
+        </View>
+      )}
     </MainContainer>
   );
 };

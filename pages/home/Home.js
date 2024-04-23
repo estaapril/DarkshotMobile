@@ -7,11 +7,10 @@ import { global } from "../../styles/global";
 import useTheme from "../../hook/useTheme";
 import { skills } from "../../data/Data";
 
-const Home = () => {
+const Home = ({ navigation, route }) => {
   const isDark = false;
   const fs = global.customFonts;
   const { theme } = useTheme(isDark);
-
   const SkillsSection = ({ category }) => (
     <>
       <View style={styles.titleContainer}>
@@ -29,7 +28,6 @@ const Home = () => {
       ))}
     </>
   );
-
   return (
     <MainContainer isDark={isDark} scrollable={true} hasLogo={true}>
       <SectionContainer header={"careers"} subHeader={"(home based, hybrid)"}>

@@ -27,15 +27,13 @@ function MainTabNavigator() {
             <MaterialCommunityIcons
               name={iconName}
               size={size}
-              color={color}
-            ></MaterialCommunityIcons>
+              color={color}></MaterialCommunityIcons>
           );
         },
         tabBarActiveTintColor: "white",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: styles.tabBarIcon,
-      })}
-    >
+      })}>
       <Tab.Screen
         name="Notification"
         component={Notification}

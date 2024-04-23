@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./pages/login/Login";
@@ -17,45 +17,39 @@ import RegistrationSteps from "./pages/registration/registrationSteps/Registrati
 import Test from "./pages/test/Test";
 import InitialFeedback from "./pages/notification/initialFeedback/InitialFeedback";
 import FinalFeedback from "./pages/notification/finalFeedback/FinalFeedback";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Alert } from "react-native";
+import useFetchCurrentUser from "./hook/useFetchCurrentUser";
+import useAuthToken from "./hook/useAuthToken";
 
 const Stack = createNativeStackNavigator();
-// const user = false;
 
-function App() {
+function App({ route, navigation }) {
+  const { token } = useAuthToken();
+  const { user, isLoading } = useFetchCurrentUser(token);
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* {user && <Stack.Screen name="MainTabs" component={MainTabNavigator} />} */}
-        {/* <Stack.Screen
-          name="MainTabs"
-          component={MainTabNavigator}
-        ></Stack.Screen> */}
         <Stack.Group>
-          {/* {!user && ( */}
-          <>
-            {/* <Stack.Screen name="Login" component={Login} /> */}
-            {/* <Stack.Screen name="Registration" component={Registration} /> */}
-            {/* <Stack.Screen
-              name="RegistrationSteps"
-              component={RegistrationSteps}
-            ></Stack.Screen> */}
-          </>
-          {/* )} */}
-          {/* {user && ( */}
-          <>
-            {/* <Stack.Screen name="Home" component={Home} /> */}
-            {/* <Stack.Screen name="Application" component={Application} /> */}
-            {/* <Stack.Screen name="Profile" component={Profile} /> */}
-            {/* <Stack.Screen name="Notification" component={Notification} /> */}
-            {/* <Stack.Screen name="Message" component={Message} /> */}
-            {/* <Stack.Screen
-              name="InitialInterview"
-              component={InitialInterview}
-            /> */}
-            {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
-            <Stack.Screen name="InitialFeedback" component={InitialFeedback} />
-            {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
-          </>
+          {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
+          {/* <Stack.Screen name="Home" component={Home} /> */}
+          {/* <Stack.Screen name="Application" component={Application} /> */}
+          <Stack.Screen name="Profile" component={Profile} />
+          {/* <Stack.Screen name="Notification" component={Notification} /> */}
+          {/* <Stack.Screen name="Message" component={Message} /> */}
+          {/* <Stack.Screen name="InitialInterview" component={InitialInterview} /> */}
+          {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
+          {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
+          {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
+        </Stack.Group>
+        <Stack.Group>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Registration" component={Registration} />
+          <Stack.Screen
+            name="RegistrationSteps"
+            component={RegistrationSteps}
+          />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

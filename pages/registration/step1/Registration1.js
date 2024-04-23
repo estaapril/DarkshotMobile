@@ -6,7 +6,7 @@ import SectionContainer from "../../../components/shared folder/containers/secti
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
 import { registration1 } from "../../../data/Data";
-import { skills } from "../../../data/Data";
+import { RegistrationSkills } from "../../../data/Data";
 
 const Registration1 = () => {
   const isDark = true;
@@ -22,16 +22,13 @@ const Registration1 = () => {
     password: "",
   });
 
-  const [selectedId, setSelectedId] = useState(null);
-
   const handleDesign = () => navigation.navigate("");
 
   const renderTitles = () => {
     return skills.map((category) => (
       <TouchableOpacity
         key={category.id}
-        onPress={() => setSelectedId(category.id)}
-      >
+        onPress={() => setSelectedId(category.id)}>
         <Text style={[styles.text, fs.agdasimaBold]}>{category.category}</Text>
       </TouchableOpacity>
     ));
@@ -40,6 +37,11 @@ const Registration1 = () => {
   const onChangeText = (key, value) => {
     setFormData({ ...formData, [key]: value });
   };
+
+  const [selectedCategory, setSelectedCategory] = useState(1);
+  const handleSelectedCategory = (value) => {
+    setSelectedCategory(value);
+  }; // Function to filter jobs by category
 
   return (
     <>
@@ -72,23 +74,48 @@ const Registration1 = () => {
           </Text>
         </View>
 
-        <View style={styles.skillsHeader}>{renderTitles()}</View>
+        <View style={[styles.skillsHeader]}>
+          {/* CATEGORY */}
+          {RegistrationSkills.map((category, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                onPress={() => handleSelectedCategory(category.id)}>
+                <Text
+                  style={[
+                    fs.agdasimaBold,
+                    {
+                      color: "#fff",
+                      fontSize: 14,
+                      textTransform: "capitalize",
+                    },
+                  ]}>
+                  {category.category}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
 
         <View style={styles.skillsMainContainer}>
-          {selectedId &&
-            skills
-              .find((category) => category.id === selectedId)
-              ?.list.map((skill, index) => (
-                <TouchableOpacity
-                  key={index}
-                  style={styles.skillContainer}
-                  onPress={handleDesign}
-                >
-                  <Text style={[styles.text, fs.agdasimaBold]}>
-                    {skill.name}
-                  </Text>
-                </TouchableOpacity>
-              ))}
+          {selectedCategory !== undefined && (
+            <>
+              {RegistrationSkills.map((skill) => {
+                if (skill.id == selectedCategory && skill.job) {
+                  return skill.job.map((job) => (
+                    <TouchableOpacity
+                      key={job.item}
+                      style={styles.skillContainer}>
+                      <Text style={[styles.text, fs.agdasimaBold]}>
+                        {job.item}
+                      </Text>
+                    </TouchableOpacity>
+                  ));
+                }
+                return null;
+              })}
+            </>
+          )}
         </View>
       </SectionContainer>
     </>

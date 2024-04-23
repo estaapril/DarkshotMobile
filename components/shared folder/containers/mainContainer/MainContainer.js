@@ -52,14 +52,13 @@ const MainContainer = ({
   };
   return (
     <View
-      style={[theme.bgColor, styles.container, isCentered && styles.centered]}
-    >
+      style={[theme.bgColor, styles.container, isCentered && styles.centered]}>
       {scrollable || scrollable == null ? (
         <ScrollView
           bounces={false}
           alwaysBounceVertical={false}
           style={styles.scrollContainer}
-        >
+          automaticallyAdjustKeyboardInsets={true}>
           {hasLogo || hasLogo == null ? (
             <View style={styles.logoContainer}>
               <Image
