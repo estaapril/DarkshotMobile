@@ -38,8 +38,8 @@ function App() {
             name="RegistrationSteps"
             component={RegistrationSteps}
           ></Stack.Screen> */}
-          <Stack.Screen name="Home" component={Home} />
-          {/* <Stack.Screen name="Application" component={Application} /> */}
+          {/* <Stack.Screen name="Home" component={Home} /> */}
+          <Stack.Screen name="Application" component={Application} />
           {/* <Stack.Screen name="Notification" component={Notification} /> */}
           {/* <Stack.Screen name="Message" component={Message} /> */}
           {/* <Stack.Screen name="InitialInterview" component={InitialInterview} /> */}
