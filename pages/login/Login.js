@@ -5,42 +5,42 @@ import brand from "../../assets/images/darkshotproduction-logo.png";
 import brand2 from "../../assets/images/darkshot-logo-collapsed.png";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
-import CustomButton from "../../components/shared folder/buttons/CustomButton";
 import useTheme from "../../hook/useTheme";
+import useLogin from "../../hook/useLogin";
 import { Alert } from "react-native";
 import user from "../../assets/icons/user.png";
 import padlock from "../../assets/icons/padlock.png";
 import view from "../../assets/icons/view.png";
 import hide from "../../assets/icons/hide.png";
+import CustomButton from "../../components/shared folder/buttons/CustomButton";
 
-const Login = ({ navigation }) => {
+const Login = ({ route, navigation }) => {
+  // STYLES
+  const isDark = true;
+  const { theme } = useTheme(isDark);
+  const fs = global.customFonts;
+  // USE HOOK
+  const { handleLogin } = useLogin();
+  // VARIABLES
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  // VARIABLE HANDLERS
   const handleUsername = (text) => {
     setUsername(text);
   };
-
   const handlePassword = (text) => {
     setPassword(text);
   };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const togglePassword = () => {
+    setPasswordVisible(!passwordVisible);
   };
-
-  const [isLoading, setIsLoading] = useState(false);
-  const isDark = true;
-  const fs = global.customFonts;
-  const { theme } = useTheme(isDark);
-  const [error, setError] = useState(null);
-  const handleSignup = () => navigation.navigate("Registration");
-
-  const handleLogin = async () => {
-    const data = { username: username, password: password };
+  // FUNCTIONS
+  const handleSignup = () => {};
+  const handleSubmit = () => {
+    Alert.alert("click");
+    // handleLogin(username, password, navigation);
   };
-
   return (
     <MainContainer
       isDark={isDark}
@@ -55,7 +55,6 @@ const Login = ({ navigation }) => {
           <Image source={brand} style={styles.brand} />
         </View>
       </View>
-
       <View style={styles.container}>
         <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
           {"Username"}
@@ -74,23 +73,17 @@ const Login = ({ navigation }) => {
           <TextInput
             style={styles.inputStyle}
             onChangeText={handlePassword}
-            secureTextEntry={!showPassword}
+            secureTextEntry={!passwordVisible}
           />
-          <TouchableOpacity
-            onPress={togglePasswordVisibility}
-            style={styles.eyeIcon}
-          >
-            <Image
-              source={showPassword ? view : hide}
-              style={[styles.icon, { tintColor: "gray" }]}
-            />
+          <TouchableOpacity onPress={togglePassword} style={styles.eyeIcon}>
+            <Image source={passwordVisible ? view : hide} style={styles.icon} />
           </TouchableOpacity>
           <Image source={padlock} style={styles.icon} />
         </View>
       </View>
-
+      {/* <Text style={theme.txtColor}>{error ? error : "no error"}</Text> */}
       <View style={styles.actionContainer}>
-        <CustomButton isPrimary label={"Login"} onPress={handleLogin} />
+        <CustomButton isPrimary label="Login" onPress={handleSubmit} />
       </View>
 
       <View style={[styles.container, { paddingRight: 10 }]}>
@@ -107,5 +100,4 @@ const Login = ({ navigation }) => {
     </MainContainer>
   );
 };
-
 export default Login;

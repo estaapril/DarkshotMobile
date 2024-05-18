@@ -5,7 +5,7 @@ import MainContainer from "../../../components/shared folder/containers/mainCont
 import { global } from "../../../styles/global";
 import useTheme from "../../../hook/useTheme";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
-import { interview } from "../../../data/Data";
+import { interview } from "../../../constants/Constants";
 
 const Interview = () => {
   const isDark = false;

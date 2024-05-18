@@ -5,7 +5,7 @@ import MainContainer from "../../../components/shared folder/containers/mainCont
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
-import { empName, role, email, number } from "../../../data/Data";
+import { empName, role, email, number } from "../../../constants/Constants";
 import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 import emptyImage from "../../../assets/images/emptyImage.png";
 

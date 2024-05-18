@@ -1,5 +1,5 @@
 import React from "react";
-import { name, position, notifmessages } from "../../data/Data";
+import { name, position, notifmessages } from "../../constants/Constants";
 import MainContainer from "../../components/shared folder/containers/mainContainer/MainContainer";
 import { global } from "../../styles/global";
 import { useTheme } from "@react-navigation/native";

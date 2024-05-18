@@ -6,7 +6,7 @@ import CustomButton from "../../../components/shared folder/buttons/CustomButton
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
 
-const editSkills = () => {
+const EditSkills = () => {
   const isDark = true;
   const fs = global.customFonts;
   const { theme } = useTheme(isDark);
@@ -27,4 +27,4 @@ const editSkills = () => {
     </MainContainer>
   );
 };
-export default editSkills;
+export default EditSkills;

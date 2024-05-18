@@ -68,6 +68,5 @@ export const styles = StyleSheet.create({
     right: 35,
     width: 22,
     height: 22,
-    tintColor: "yellow",
   },
 });

@@ -1,4 +1,4 @@
-import { ScrollView, View, Image } from "react-native";
+import { ScrollView, View, Image, SafeAreaView } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { styles } from "../mainContainer/styles";
 import { useEffect } from "react";
@@ -51,6 +51,7 @@ const MainContainer = ({
     paddingBottom: 10,
   };
   return (
+    // <SafeAreaView style={{ flex: 1 }}>
     <View
       style={[theme.bgColor, styles.container, isCentered && styles.centered]}
     >
@@ -58,8 +59,9 @@ const MainContainer = ({
         <ScrollView
           bounces={false}
           alwaysBounceVertical={false}
-          automaticallyAdjustKeyboardInsets={true}
-          automaticallyAdjustContentInsets={true}
+          automaticallyAdjustKeyboardInsets
+          automaticallyAdjustContentInsets
+          showsVerticalScrollIndicator={false}
           style={styles.scrollContainer}
         >
           {hasLogo || hasLogo == null ? (
@@ -102,6 +104,7 @@ const MainContainer = ({
         </View>
       )}
     </View>
+    // </SafeAreaView>
   );
 };
 export default MainContainer;

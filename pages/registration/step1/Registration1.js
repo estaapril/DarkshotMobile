@@ -5,8 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
-import { registration1 } from "../../../data/Data";
-import { skills } from "../../../data/Data";
+import { registration1 } from "../../../constants/Constants";
+import { skills } from "../../../constants/Constants";
 import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const Registration1 = () => {

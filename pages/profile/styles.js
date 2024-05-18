@@ -139,4 +139,25 @@ export const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "black",
   },
+  emailIcon: {
+    position: "absolute",
+    top: 10,
+    width: 20,
+    height: 20,
+    tintColor: "gray",
+  },
+  mobileIcon: {
+    position: "absolute",
+    top: -1,
+    width: 22,
+    height: 22,
+    tintColor: "gray",
+  },
+  calendarIcon: {
+    position: "absolute",
+    top: 10,
+    width: 25,
+    height: 25,
+    tintColor: "gray",
+  },
 });

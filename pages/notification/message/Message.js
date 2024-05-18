@@ -5,7 +5,7 @@ import MainContainer from "../../../components/shared folder/containers/mainCont
 import { global } from "../../../styles/global";
 import { useTheme } from "@react-navigation/native";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
-import { mainNotif } from "../../../data/Data";
+import { mainNotif } from "../../../constants/Constants";
 import MainTabNavigator from "../../home/mainTab/MainTabNavigator";
 
 const Message = () => {

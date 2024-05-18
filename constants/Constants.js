@@ -30,8 +30,12 @@ export const registration1 = [
 
 export const empName = "alfredo John r. lera iii";
 export const role = "admin";
-export const email = "Email: leraajr@gmail.com";
-export const number = "Contact Number: 09456853215";
+export const email = "Email";
+export const emailDetail = "leraajr@gmail.com";
+export const phone = "Phone";
+export const contactDetail = "09456853215";
+export const joined = "Joined";
+export const calendarDetail = "14 March, 2020";
 
 export const skills = [
   {
