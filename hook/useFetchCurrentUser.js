@@ -3,6 +3,9 @@ import useAuthToken from "./useAuthToken";
 
 const useFetchCurrentUser = () => {
   const [user, setUser] = useState({});
+  const removeUser = () => {
+    setUser({});
+  };
   const [isLoading, setIsLoading] = useState(true);
   const { token } = useAuthToken();
   useEffect(() => {
@@ -26,6 +29,7 @@ const useFetchCurrentUser = () => {
         }
       } catch (error) {
         setIsLoading(false);
+        removeUser();
         console.error("Error:", error);
       }
     };
@@ -33,7 +37,7 @@ const useFetchCurrentUser = () => {
     fetchCurrentUser();
   }, [token]);
 
-  return { user, isLoading };
+  return { user, isLoading, removeUser };
 };
 
 export default useFetchCurrentUser;

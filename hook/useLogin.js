@@ -1,10 +1,12 @@
 import { useState } from "react";
 import useAuthToken from "./useAuthToken";
+import useFetchCurrentUser from "./useFetchCurrentUser";
 
 const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { saveToken } = useAuthToken();
+  const { saveToken, removeToken } = useAuthToken();
+  const { removeUser } = useFetchCurrentUser();
   const handleLogin = async (username, password, navigation) => {
     setIsLoading(true);
     const data = { username: username, password: password };
@@ -24,6 +26,8 @@ const useLogin = () => {
         const responseData = await response.json();
         // Store token in AsyncStorage
         // console.warn(responseData.user);
+        removeToken();
+        removeUser();
         saveToken(responseData.token);
         navigation.navigate("Profile");
       } else if (response.status === 401) {

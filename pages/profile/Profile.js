@@ -44,16 +44,14 @@ const Profile = ({ navigation, route }) => {
             },
           ]}>
           {isLoading ? (
-            <ActivityIndicator color="#000" size={"large"} />
+            <Text>Loading ...</Text>
           ) : (
             <>
               <Text style={[styles.applicantName, fs.poppinsBold]}>
-                {isLoading ? "Loading ..." : user ? user?.fullName : "No user"}
+                {user ? user?.fullName : "No user"}
               </Text>
               <Text style={[styles.applicantRole, fs.poppins]}>
-                {isLoading
-                  ? "Loading ..."
-                  : user?.position == 1
+                {user?.position == 1
                   ? "Admin"
                   : user?.position == 2
                   ? "Client"
@@ -62,10 +60,10 @@ const Profile = ({ navigation, route }) => {
                   : "No user"}
               </Text>
               <Text style={[styles.applicantContacts, fs.poppins]}>
-                {isLoading ? "Loading ..." : user ? user?.email : "No user"}
+                {user ? user?.email : "No user"}
               </Text>
               <Text style={[styles.applicantContacts, fs.poppins]}>
-                {isLoading ? "Loading ..." : user ? user?.contact : "No user"}
+                {user ? user?.contact : "No user"}
               </Text>
             </>
           )}

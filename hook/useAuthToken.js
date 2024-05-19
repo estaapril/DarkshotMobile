@@ -15,8 +15,6 @@ const useAuthToken = () => {
         console.log("Error fetching token:", error);
       }
     };
-
-    // Fetch the token when the component mounts
     fetchToken();
   }, []);
 
