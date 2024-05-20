@@ -5,9 +5,9 @@ import MainContainer from "../../../components/shared folder/containers/mainCont
 import useTheme from "../../../hook/useTheme";
 import { global } from "../../../styles/global";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
-import { empName, role, email, number } from "../../../constants/Constants";
 import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 import emptyImage from "../../../assets/images/emptyImage.png";
+import { TextInput } from "react-native-paper";
 
 const Profile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -35,37 +35,156 @@ const Profile = () => {
     <MainContainer isDark={isDark}>
       <Image source={emptyImage} style={styles.imageProfile}></Image>
 
-      <Text
-        style={[
-          styles.applicantName,
-          fs.poppins,
-          { alignSelf: "center", marginBottom: 5 },
-        ]}
-      >
-        {empName}
-      </Text>
+      <SectionContainer header={"edit profile"}></SectionContainer>
 
-      <Text
-        style={[
-          styles.applicantRole,
-          fs.poppins,
-          { alignSelf: "center", marginBottom: 30 },
-        ]}
+      <View
+        style={{
+          top: -10,
+          flexDirection: "column",
+          rowGap: 20,
+          marginBottom: 30,
+        }}
       >
-        {role}
-      </Text>
-
-      <SectionContainer header={"contact"}></SectionContainer>
-      <View style={{ top: -35 }}>
-        <Text
-          style={[styles.applicantContacts, fs.poppins, { marginVertical: 15 }]}
+        <View
+          style={{
+            position: "absolute",
+            top: -10,
+            left: 15,
+            zIndex: 1,
+            paddingHorizontal: 10,
+          }}
         >
-          {email}
-        </Text>
-        <Text style={[styles.applicantContacts, fs.poppins]}>{number}</Text>
-      </View>
-      <SectionContainer header={"skills"}></SectionContainer>
+          <Text
+            style={{
+              backgroundColor: "white",
+              paddingHorizontal: 8,
+              ...fs.poppinsSemiBold,
+              fontSize: 15,
+            }}
+          >
+            NAME
+          </Text>
+        </View>
 
+        <TextInput
+          style={{
+            borderWidth: 2,
+            backgroundColor: "white",
+            borderStartStartRadius: 40,
+            borderStartEndRadius: 40,
+            borderRadius: 40,
+          }}
+          placeholder="Alfredo John Lera III"
+          placeholderTextColor="gray"
+        />
+
+        <View>
+          <View
+            style={{
+              position: "absolute",
+              top: -10,
+              left: 15,
+              zIndex: 1,
+              paddingHorizontal: 10,
+            }}
+          >
+            <Text
+              style={{
+                backgroundColor: "white",
+                paddingHorizontal: 8,
+                ...fs.poppinsSemiBold,
+                fontSize: 15,
+              }}
+            >
+              EMAIL ID
+            </Text>
+          </View>
+
+          <TextInput
+            style={{
+              borderWidth: 2,
+              backgroundColor: "white",
+              borderStartStartRadius: 40,
+              borderStartEndRadius: 40,
+              borderRadius: 40,
+            }}
+            placeholder="leraajr@gmail.com"
+            placeholderTextColor="gray"
+          />
+        </View>
+
+        <View>
+          <View
+            style={{
+              position: "absolute",
+              top: -10,
+              left: 15,
+              zIndex: 1,
+              paddingHorizontal: 10,
+            }}
+          >
+            <Text
+              style={{
+                backgroundColor: "white",
+                paddingHorizontal: 8,
+                ...fs.poppinsSemiBold,
+                fontSize: 15,
+              }}
+            >
+              PHONE
+            </Text>
+          </View>
+
+          <TextInput
+            style={{
+              borderWidth: 2,
+              backgroundColor: "white",
+              borderStartStartRadius: 40,
+              borderStartEndRadius: 40,
+              borderRadius: 40,
+            }}
+            placeholder="09456853215"
+            placeholderTextColor="gray"
+          />
+        </View>
+
+        <View>
+          <View
+            style={{
+              position: "absolute",
+              top: -10,
+              left: 15,
+              zIndex: 1,
+              paddingHorizontal: 10,
+            }}
+          >
+            <Text
+              style={{
+                backgroundColor: "white",
+                paddingHorizontal: 8,
+                ...fs.poppinsSemiBold,
+                fontSize: 15,
+              }}
+            >
+              PASSWORD
+            </Text>
+          </View>
+
+          <TextInput
+            style={{
+              borderWidth: 2,
+              backgroundColor: "white",
+              borderStartStartRadius: 40,
+              borderStartEndRadius: 40,
+              borderRadius: 40,
+            }}
+            placeholder="●●●●●●●●●"
+            placeholderTextColor="gray"
+          />
+        </View>
+      </View>
+
+      <SectionContainer header={"skills"}></SectionContainer>
       <View
         style={{
           flex: 1,
@@ -76,9 +195,7 @@ const Profile = () => {
           <CustomButton isSecondary label={"EDIT SKILLS"} />
         </View>
       </View>
-
       <SectionContainer header={"files"}></SectionContainer>
-
       <Text style={[styles.fileText, fs.poppins]}>{"resume"}</Text>
       <View style={styles.choosefileContainer}>
         <TouchableOpacity style={styles.downloadBtn} onPress={handleFilePick}>
@@ -90,7 +207,6 @@ const Profile = () => {
           </Text>
         </View>
       </View>
-
       <View style={styles.filesContainer}>
         <Text style={[styles.fileText, fs.poppins]}>{"portfolio"}</Text>
         <View

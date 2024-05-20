@@ -91,7 +91,7 @@ import SectionContainer from "../../components/shared folder/containers/sectionC
 import { global } from "../../styles/global";
 import useTheme from "../../hook/useTheme";
 import { skills } from "../../constants/Constants";
-import { SearchBar } from "react-native-elements";
+// import { SearchBar } from "react-native-elements";
 
 const Home = () => {
   const isDark = false;
@@ -139,7 +139,7 @@ const Home = () => {
 
   return (
     <MainContainer isDark={isDark} scrollable={true} hasLogo={true}>
-      <SearchBar
+      {/* <SearchBar
         placeholder="Type to search for jobs..."
         onChangeText={updateSearch}
         value={search}
@@ -160,7 +160,7 @@ const Home = () => {
           color: "black",
           fontFamily: "Poppins-Regular",
         }}
-      />
+      /> */}
 
       <SectionContainer header={"careers"} subHeader={"(home based, hybrid)"}>
         <ScrollView horizontal={true} style={styles.categoryContainer}>

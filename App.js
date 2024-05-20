@@ -39,7 +39,7 @@ function App() {
             component={RegistrationSteps}
           ></Stack.Screen> */}
           {/* <Stack.Screen name="Home" component={Home} /> */}
-          <Stack.Screen name="Application" component={Application} />
+          {/* <Stack.Screen name="Application" component={Application} /> */}
           {/* <Stack.Screen name="Notification" component={Notification} /> */}
           {/* <Stack.Screen name="Message" component={Message} /> */}
           {/* <Stack.Screen name="InitialInterview" component={InitialInterview} /> */}
@@ -47,7 +47,7 @@ function App() {
           {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
           {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
           {/* <Stack.Screen name="Profile" component={Profile} /> */}
-          {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
+          <Stack.Screen name="EditProfile" component={EditProfile} />
           {/* <Stack.Screen name="Portfolio" component={Portfolio} /> */}
           {/* <Stack.Screen name="OpenImage" component={OpenImage} /> */}
           {/* <Stack.Screen name="EditPortfolio" component={EditPortfolio} /> */}

@@ -7,11 +7,6 @@ export const styles = StyleSheet.create({
   applicantMain: {
     width: "auto",
     height: 120,
-    // flexDirection: "column",
-    // columnGap: 15,
-    // justifyContent: "center",
-    // alignContent: "center",
-    // alignSelf: "center",
     display: "flex",
     marginBottom: 40,
     borderWidth: 1,
@@ -23,14 +18,11 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     width: 100,
     height: 100,
-    // alignContent: "center",
     alignSelf: "center",
-    // flex: 1,
     display: "flex",
     marginBottom: 6,
   },
   applicantdetails: {
-    // flex: 2,
     display: "flex",
   },
   applicantName: {
@@ -49,10 +41,8 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     display: "flex",
-    // marginBottom: 20,
   },
   skillsList: {
-    // backgroundColor: "#F8F9FA",
     backgroundColor: "#EDEDED",
     borderRadius: 20,
     marginHorizontal: 5,
@@ -60,11 +50,11 @@ export const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 10,
   },
-  text: {
-    textTransform: "uppercase",
-    color: "#606060",
-    fontSize: 15,
-  },
+  // text: {
+  //   textTransform: "uppercase",
+  //   color: "#606060",
+  //   fontSize: 15,
+  // },
   filesContainer: {
     display: "flex",
     paddingBottom: 150,
@@ -82,14 +72,12 @@ export const styles = StyleSheet.create({
     borderTopWidth: 0,
     marginVertical: 5,
     marginBottom: 15,
-    // flex: 1,
     display: "flex",
   },
   downloadBtn: {
     paddingHorizontal: 15,
     height: 32,
     backgroundColor: "black",
-    // alignItems: "center",
     justifyContent: "center",
   },
   viewPortfolio: {
@@ -98,7 +86,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 35,
     height: 45,
     backgroundColor: "black",
-    // alignItems: "center",
     justifyContent: "center",
   },
   btnStyle: {
@@ -111,15 +98,12 @@ export const styles = StyleSheet.create({
   imageStyle: {
     resizeMode: "contain",
     borderRadius: 5,
-    // width: 320,
-    // height: 180,
   },
   imageContainer: {
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 10,
     display: "flex",
-    // marginBottom: 40,
     marginTop: 100,
   },
   buttonContainer: {
@@ -131,12 +115,41 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     textTransform: "uppercase",
     marginBottom: 30,
-    // marginLeft: 220,
     paddingTop: 10,
     paddingLeft: 20,
-    // paddingRight: 20,
     paddingBottom: 10,
     alignSelf: "center",
     backgroundColor: "black",
+  },
+
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  inputContainer: {
+    width: "80%",
+    position: "relative",
+  },
+  input: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingTop: 20,
+    backgroundColor: "white",
+  },
+  overlayText: {
+    position: "absolute",
+    top: -10,
+    left: 10,
+    paddingHorizontal: 5,
+    fontSize: 12,
+  },
+  textContainer: {
+    backgroundColor: "lightblue", //temporary
+    padding: 5,
+    borderWidth: 1,
   },
 });
