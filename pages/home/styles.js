@@ -44,4 +44,29 @@ export const styles = StyleSheet.create({
     flex: 1,
     textTransform: "capitalize",
   },
+
+  container: {
+    flex: 1,
+    padding: 22,
+  },
+  categoryContainer: {
+    marginBottom: 20,
+  },
+  categoryTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  jobContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  jobTitle: {
+    fontSize: 15,
+    paddingLeft: 10,
+  },
+  noJobs: {
+    textAlign: "center",
+  },
 });
