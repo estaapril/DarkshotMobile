@@ -69,4 +69,9 @@ export const styles = StyleSheet.create({
   noJobs: {
     textAlign: "center",
   },
+
+  searchbar: {
+    elevation: 0, // Remove shadow on Android
+    height: 40,
+  },
 });

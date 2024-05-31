@@ -1,11 +1,17 @@
-import { View, Text, TouchableOpacity, ScrollView, Modal } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Modal,
+  Pressable,
+} from "react-native";
 import React, { useState } from "react";
 import { styles } from "../application/styles";
 import MainContainer from "../../../components/shared folder/containers/mainContainer/MainContainer";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
 import { global } from "../../../styles/global";
 import useTheme from "../../../hook/useTheme";
-import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 
 const Application = () => {
   const isDark = false;
@@ -104,92 +110,91 @@ const Application = () => {
   };
 
   const [toggleList, setToggleList] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <MainContainer isDark={isDark}>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={isModalVisible}
-        onRequestClose={toggleModal}
-      >
-        <View style={styles.modalBackdrop}>
-          <View
-            style={styles.modalContent}
-            onStartShouldSetResponder={(e) => true}
-            onResponderRelease={(e) => e.stopPropagation()}
-          >
-            <ScrollView>
-              <View style={styles.contentContainer}>
-                <Text style={[styles.title, fs.poppinsSemiBold]}>
-                  {why.title}
-                </Text>
-                <Text style={[styles.list, fs.poppins]}>{why.description}</Text>
-              </View>
-
-              <View style={styles.contentContainer}>
+    <MainContainer isDark={isDark} scrollable={true}>
+      <View style={styles.centeredView}>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <ScrollView contentContainerStyle={styles.scrollViewContent}>
                 <Text style={[styles.title, fs.poppinsSemiBold]}>
                   {what.title}
+                  {"\n"}
                 </Text>
                 <Text style={[styles.list, fs.poppins]}>
-                  {what.description}
+                  {what.description} {"\n"}
                 </Text>
 
-                <View style={[styles.contentContainer, { marginLeft: 15 }]}>
-                  <TouchableOpacity onPress={toggleVisible}>
-                    <View style={styles.dropdownHeader}>
-                      <Text style={[styles.title, fs.poppinsSemiBold]}>
-                        {responsibilities.title}
-                      </Text>
-                      <Text style={styles.dropdownIcon}>
-                        {isDropdownOpen ? "▲" : "▼"}
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
+                <TouchableOpacity onPress={toggleVisible}>
+                  <View style={styles.dropdownHeader}>
+                    <Text style={[styles.title, fs.poppinsSemiBold]}>
+                      {responsibilities.title} {"\n"}
+                    </Text>
+                    <Text style={styles.dropdownIcon}>
+                      {isDropdownOpen ? "▲" : "▼"} {"\n"}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
 
-                  {isDropdownOpen && (
-                    <View style={{ marginLeft: 10 }}>
-                      {responsibilities.list.map((list, index) => (
-                        <Text key={index} style={[styles.list, fs.poppins]}>
-                          ● {list.item}
-                        </Text>
-                      ))}
-                    </View>
-                  )}
-                </View>
-
-                <View style={styles.contentContainer}>
-                  <Text style={[styles.title, fs.poppinsSemiBold]}>
-                    {requirements.title}
-                  </Text>
-
-                  <View>
-                    {requirements.list.map((list, index) => (
+                {isDropdownOpen && (
+                  <View style={{ marginLeft: 10 }}>
+                    {responsibilities.list.map((list, index) => (
                       <Text key={index} style={[styles.list, fs.poppins]}>
                         ● {list.item}
                       </Text>
                     ))}
                   </View>
+                )}
+
+                <Text style={[styles.title, fs.poppinsSemiBold]}>
+                  {requirements.title} {"\n"}
+                </Text>
+
+                <View>
+                  {requirements.list.map((list, index) => (
+                    <Text key={index} style={[styles.list, fs.poppins]}>
+                      ● {list.item}
+                    </Text>
+                  ))}
                 </View>
-              </View>
 
-              <View style={{ flexDirection: "row-reverse", marginTop: 10 }}>
-                <CustomButton
-                  isSecondary
-                  label={"APPLY NOW"}
-                  onPress={toggleModal}
-                />
-              </View>
-            </ScrollView>
+                <Pressable
+                  style={[styles.button, styles.buttonApply]}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Text
+                    style={[
+                      fs.poppinsSemi,
+                      { color: "white", paddingHorizontal: 20 },
+                    ]}
+                  >
+                    APPLY NOW
+                  </Text>
+                </Pressable>
+              </ScrollView>
+            </View>
           </View>
-        </View>
-      </Modal>
-
-      <SectionContainer header={"graphic designers"} subHeader={"(hybrid)"}>
-        <TouchableOpacity onPress={toggleModal}>
-          <Text style={[styles.title, fs.poppinsSemiBold]}>View details</Text>
-        </TouchableOpacity>
-      </SectionContainer>
+        </Modal>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => setModalVisible(true)}
+        >
+          <SectionContainer
+            header={"graphic designers"}
+            subHeader={"(hybrid)"}
+            Pressable={true}
+          />
+        </Pressable>
+      </View>
     </MainContainer>
   );
 };
