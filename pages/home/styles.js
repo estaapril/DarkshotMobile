@@ -21,11 +21,12 @@ export const styles = StyleSheet.create({
   },
   titleContainer: {
     display: "flex",
-    marginVertical: 20,
+    marginVertical: 10,
   },
   title: {
     fontSize: 23,
     textTransform: "uppercase",
+    marginVertical: 10,
   },
   moreButton: {
     borderWidth: 1,
@@ -44,34 +45,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     textTransform: "capitalize",
   },
-
-  container: {
-    flex: 1,
-    padding: 22,
-  },
   categoryContainer: {
-    marginBottom: 20,
-  },
-  categoryTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-  jobContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  jobTitle: {
-    fontSize: 15,
-    paddingLeft: 10,
+    height: 5,
   },
   noJobs: {
     textAlign: "center",
-  },
-
-  searchbar: {
-    elevation: 0, // Remove shadow on Android
-    height: 40,
   },
 });

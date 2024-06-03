@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import LoadingScreen from "./pages/loadingscreen/LoadingScreen";
 import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Registration1 from "./pages/registration/step1/Registration1";
@@ -32,13 +33,14 @@ function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
         <Stack.Group>
+          <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
           {/* <Stack.Screen name="Login" component={Login} /> */}
           {/* <Stack.Screen name="Registration" component={Registration} /> */}
           {/* <Stack.Screen
             name="RegistrationSteps"
             component={RegistrationSteps}
           ></Stack.Screen> */}
-          <Stack.Screen name="Home" component={Home} />
+          {/* <Stack.Screen name="Home" component={Home} /> */}
           {/* <Stack.Screen name="Application" component={Application} /> */}
           {/* <Stack.Screen name="Notification" component={Notification} /> */}
           {/* <Stack.Screen name="Message" component={Message} /> */}

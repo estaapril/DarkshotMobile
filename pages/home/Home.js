@@ -60,7 +60,8 @@ const Home = () => {
   );
 
   const [displayJobsByCategory, setDisplayJobsByCategory] = useState({});
-  useEffect(() => {
+
+  const fetchJobs = () => {
     if (jobs.length > 0 && categories.length > 0) {
       const jobsByCategory = categories.reduce((index, category) => {
         index[category._id] = jobs.filter(
@@ -70,6 +71,10 @@ const Home = () => {
       }, {});
       setDisplayJobsByCategory(jobsByCategory);
     }
+  };
+
+  useEffect(() => {
+    fetchJobs();
   }, [jobs, categories]);
 
   return (

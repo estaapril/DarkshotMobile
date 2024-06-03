@@ -5,8 +5,9 @@ import {
   ScrollView,
   Modal,
   Pressable,
+  RefreshControl,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { styles } from "../application/styles";
 import MainContainer from "../../../components/shared folder/containers/mainContainer/MainContainer";
 import SectionContainer from "../../../components/shared folder/containers/sectionContainer/SectionContainer";
@@ -19,6 +20,7 @@ const Application = () => {
   const { theme } = useTheme(isDark);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
@@ -109,6 +111,13 @@ const Application = () => {
     list: [{ name: "Initial interview" }, { name: "Final interview" }],
   };
 
+  const onRefresh = () => {
+    setRefreshing(true);
+
+    fetchData().then(() => {
+      setRefreshing(false);
+    });
+  };
   const [toggleList, setToggleList] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -169,7 +178,7 @@ const Application = () => {
 
                 <Pressable
                   style={[styles.button, styles.buttonApply]}
-                  onPress={() => setModalVisible(!modalVisible)}
+                  // onPress={() => setModalVisible(!modalVisible)}
                 >
                   <Text
                     style={[
@@ -195,6 +204,11 @@ const Application = () => {
           />
         </Pressable>
       </View>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      ></ScrollView>
     </MainContainer>
   );
 };

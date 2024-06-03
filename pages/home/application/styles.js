@@ -29,25 +29,12 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  modalContent: {
-    backgroundColor: "white",
-    padding: 20,
-    borderRadius: 10,
-    width: "80%",
-  },
   modalBackdrop: {
     flex: 1,
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     justifyContent: "center",
     alignItems: "center",
   },
-  modalContent: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "white",
-    padding: 20,
-  },
-
   list: {
     fontSize: 16,
     marginBottom: 5,
@@ -75,6 +62,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+    marginTop: 200,
   },
   button: {
     marginTop: 50,
