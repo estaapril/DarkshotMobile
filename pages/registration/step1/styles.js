@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 12,
-    textTransform: "uppercase",
+    textTransform: "capitalize",
   },
   inputField: {
     height: 30,

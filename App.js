@@ -6,6 +6,8 @@ import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Registration1 from "./pages/registration/step1/Registration1";
 import Registration2 from "./pages/registration/step2/Registration2";
+import Registration3 from "./pages/registration/step3/Registration3";
+import Registration4 from "./pages/registration/step4/Registration4";
 import Application from "./pages/home/application/Application";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/editProfile/EditProfile";
@@ -33,13 +35,15 @@ function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* <Stack.Screen name="MainTabs" component={MainTabNavigator} /> */}
         <Stack.Group>
-          <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+          {/* <Stack.Screen name="LoadingScreen" component={LoadingScreen} /> */}
           {/* <Stack.Screen name="Login" component={Login} /> */}
           {/* <Stack.Screen name="Registration" component={Registration} /> */}
           {/* <Stack.Screen
             name="RegistrationSteps"
             component={RegistrationSteps}
           ></Stack.Screen> */}
+          {/* <Stack.Screen name="Registration3" component={Registration3} /> */}
+          {/* <Stack.Screen name="Registration4" component={Registration4} /> */}
           {/* <Stack.Screen name="Home" component={Home} /> */}
           {/* <Stack.Screen name="Application" component={Application} /> */}
           {/* <Stack.Screen name="Notification" component={Notification} /> */}
@@ -48,7 +52,7 @@ function App() {
           {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
           {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
           {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
-          {/* <Stack.Screen name="Profile" component={Profile} /> */}
+          <Stack.Screen name="Profile" component={Profile} />
           {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
           {/* <Stack.Screen name="Portfolio" component={Portfolio} /> */}
           {/* <Stack.Screen name="OpenImage" component={OpenImage} /> */}

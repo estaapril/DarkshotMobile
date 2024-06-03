@@ -19,8 +19,6 @@ const Registration1 = () => {
     name: "",
     email: "",
     number: "",
-    username: "",
-    password: "",
   });
 
   const [selectedId, setSelectedId] = useState(1);
@@ -44,7 +42,7 @@ const Registration1 = () => {
 
   return (
     <>
-      <SectionContainer isDark={isDark} header={"profile"}>
+      <SectionContainer isDark={isDark} header={"fill out your profile"}>
         <View style={styles.mainContainer}>
           {registration1.map((data, index) => (
             <View key={index}>
@@ -66,11 +64,11 @@ const Registration1 = () => {
         </View>
       </SectionContainer>
 
-      <SectionContainer isDark={isDark} header={"skills"}>
+      <SectionContainer isDark={isDark} header={"select your skills"}>
         <View style={styles.skillsHeaderContainer}>
-          <Text style={[styles.subHeader, fs.poppinsBold]}>
+          {/* <Text style={[styles.subHeader, fs.poppinsBold]}>
             {"(Choose at least 2 skills)"}
-          </Text>
+          </Text> */}
         </View>
 
         <View style={styles.skillsHeader}>{renderTitles()}</View>
@@ -98,8 +96,14 @@ const Registration1 = () => {
             flexDirection: "row-reverse",
           }}
         >
-          <View style={{ width: 198, marginTop: 104 }}>
-            <CustomButton isPrimary label={"PROCEED TO STEP 2"} />
+          <View
+            style={{
+              width: 198,
+              marginTop: 50,
+              flex: 1,
+            }}
+          >
+            <CustomButton isPrimary label={"NEXT"} />
           </View>
         </View>
       </SectionContainer>

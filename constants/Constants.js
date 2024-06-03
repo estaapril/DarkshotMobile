@@ -20,11 +20,9 @@ export const mainNotif = {
 
 export const registration1 = [
   {
-    "applicant name": "John C. Doe",
-    email: "johndoe@gmail.com",
-    "contact number": "09*********",
-    username: "johncd",
-    password: "************",
+    "Full name": "John C. Doe",
+    email: "my-email@gmail.com",
+    "contact number": "09562574158",
   },
 ];
 

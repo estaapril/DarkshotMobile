@@ -13,7 +13,7 @@ const Notification = () => {
 
   return (
     <MainContainer isDark={isDark}>
-      <SectionContainer header={"notification"}>
+      <SectionContainer header={"notifications"}>
         {Object.keys(notifmessages).map((key) => (
           <NotificationCard
             key={key}

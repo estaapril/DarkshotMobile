@@ -5,8 +5,6 @@ import MainContainer from "../../components/shared folder/containers/mainContain
 import { global } from "../../styles/global";
 import CustomButton from "../../components/shared folder/buttons/CustomButton";
 import useTheme from "../../hook/useTheme";
-import user from "../../assets/icons/user.png";
-import padlock from "../../assets/icons/padlock.png";
 import view from "../../assets/icons/view.png";
 import hide from "../../assets/icons/hide.png";
 
@@ -48,7 +46,6 @@ const Registration = ({ navigation }) => {
       hasLogo={false}
       scrollable={true}
       isCentered={true}
-      hasFooter={true}
     >
       <View style={[styles.headerContainer, { paddingBottom: 30 }]}>
         <Text style={titleHeader}>
@@ -65,9 +62,14 @@ const Registration = ({ navigation }) => {
         <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
           {"Username"}
         </Text>
+
         <View style={styles.inputContainer}>
-          <TextInput style={styles.inputStyle} onChangeText={handleUsername} />
-          <Image source={user} style={styles.icon} />
+          <TextInput
+            style={styles.inputStyle}
+            onChangeText={handleUsername}
+            placeholder="johncd"
+            placeholderTextColor="#DDDDDD"
+          />
         </View>
       </View>
 
@@ -87,13 +89,12 @@ const Registration = ({ navigation }) => {
               style={[styles.icon, { tintColor: "gray" }]}
             />
           </TouchableOpacity>
-          <Image source={padlock} style={styles.icon} />
         </View>
       </View>
 
       <View style={styles.container}>
         <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
-          {"Re-enter your password"}
+          {"Re-enter Your Password"}
         </Text>
 
         <View style={styles.inputContainer}>
@@ -111,11 +112,10 @@ const Registration = ({ navigation }) => {
               style={[styles.icon, { tintColor: "gray" }]}
             />
           </TouchableOpacity>
-          <Image source={padlock} style={styles.icon} />
         </View>
 
         <View style={styles.actionContainer}>
-          <CustomButton isPrimary label={"Sign up"} onPress={handleLogin} />
+          <CustomButton isPrimary label={"NEXT"} onPress={handleLogin} />
         </View>
 
         <View style={[styles.container, { paddingRight: 10 }]}>

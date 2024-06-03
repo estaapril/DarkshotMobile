@@ -8,8 +8,6 @@ import { global } from "../../styles/global";
 import useTheme from "../../hook/useTheme";
 import useLogin from "../../hook/useLogin";
 import { Alert } from "react-native";
-import user from "../../assets/icons/user.png";
-import padlock from "../../assets/icons/padlock.png";
 import view from "../../assets/icons/view.png";
 import hide from "../../assets/icons/hide.png";
 import CustomButton from "../../components/shared folder/buttons/CustomButton";
@@ -39,7 +37,6 @@ const Login = ({ route, navigation }) => {
   const handleSignup = () => {};
   const handleSubmit = () => {
     Alert.alert("click");
-    // handleLogin(username, password, navigation);
   };
   return (
     <MainContainer
@@ -57,12 +54,14 @@ const Login = ({ route, navigation }) => {
       </View>
       <View style={styles.container}>
         <Text style={[styles.label, fs.montserrat, theme.txtColor]}>
-          {"Username"}
+          {"Email"}
         </Text>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.inputStyle} onChangeText={handleUsername} />
-          <Image source={user} style={styles.icon} />
-        </View>
+        <TextInput
+          style={styles.inputStyle}
+          onChangeText={handleUsername}
+          placeholder="my-email@gmail.com"
+          placeholderTextColor="#DDDDDD"
+        />
       </View>
 
       <View style={styles.container}>
@@ -78,12 +77,15 @@ const Login = ({ route, navigation }) => {
           <TouchableOpacity onPress={togglePassword} style={styles.eyeIcon}>
             <Image source={passwordVisible ? view : hide} style={styles.icon} />
           </TouchableOpacity>
-          <Image source={padlock} style={styles.icon} />
         </View>
       </View>
-      {/* <Text style={theme.txtColor}>{error ? error : "no error"}</Text> */}
       <View style={styles.actionContainer}>
-        <CustomButton isPrimary label="Login" onPress={handleSubmit} />
+        <CustomButton
+          isPrimary
+          label="SIGNIN"
+          onPress={handleSubmit}
+          style={styles.button}
+        />
       </View>
 
       <View style={[styles.container, { paddingRight: 10 }]}>
@@ -93,7 +95,7 @@ const Login = ({ route, navigation }) => {
             style={[styles.activeLink, fs.poppinsBold]}
             onPress={handleSignup}
           >
-            {"Sign up here"}
+            {"Sign up"}
           </Text>
         </Text>
       </View>

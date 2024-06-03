@@ -30,23 +30,24 @@ export const styles = StyleSheet.create({
     paddingBottom: 18,
   },
   inputContainer: {
-    paddingHorizontal: 10,
-    marginTop: 8,
+    display: "flex",
   },
   actionContainer: {
     paddingHorizontal: 10,
     marginTop: 45,
     marginBottom: 18,
   },
+
   inputStyle: {
+    color: "white",
     width: "100%",
     height: 40,
-    backgroundColor: "white",
     padding: 10,
     fontSize: 18,
-    borderRadius: 5,
-    paddingLeft: 37,
-    paddingRight: 35,
+    borderWidth: 1,
+    borderBottomColor: "#DDDDDD",
+    paddingRight: 45,
+    marginBottom: 8,
   },
   normalText: {
     fontSize: 13,
@@ -58,15 +59,15 @@ export const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 17,
     top: 10,
     width: 22,
     height: 22,
+    tintColor: "#DDDDDD",
   },
   eyeIcon: {
     position: "absolute",
-    right: 35,
     width: 22,
     height: 22,
+    right: 15,
   },
 });
