@@ -3,15 +3,33 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     display: "flex",
-    alignItems: "center",
     flex: 1,
-    justifyContent: "center",
     marginHorizontal: -20,
+    height: 600,
+    width: "100%",
+    justifyContent: "center",
+    alignContent: "center",
+    alignSelf: "center",
   },
   image: {
-    width: "100%",
-    height: 300,
+    height: 250,
     marginBottom: 10,
-    borderRadius: 5,
+    width: "100%",
+  },
+  topContainer: {
+    height: 50,
+    marginTop: 50,
+    marginBottom: 30,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  backContainer: {
+    flex: 1,
+    width: 50,
+  },
+  backIcon: {
+    height: 25,
+    width: 25,
+    tintColor: "white",
   },
 });

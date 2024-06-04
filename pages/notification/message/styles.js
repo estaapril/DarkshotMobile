@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     marginTop: 40,
     flexWrap: "wrap",
     width: "100%",
+    flex: 1,
   },
   header: {
     fontSize: 14,
@@ -16,17 +17,7 @@ export const styles = StyleSheet.create({
     columnGap: 10,
     marginVertical: 20,
     display: "flex",
-    justifyContent: "center",
-  },
-  btnSubmitContainer: {
-    display: "flex",
-    position: "absolute",
-    bottom: -90,
-    right: 30,
-  },
-  btnSubmit: {
-    fontSize: 15,
-    color: "#4B77E8",
+    justifyContent: "flex-end",
   },
   buttonStyles: {
     paddingVertical: 10,
@@ -37,5 +28,10 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 14,
+  },
+  inlineTextContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
   },
 });

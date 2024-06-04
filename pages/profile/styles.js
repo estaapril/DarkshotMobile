@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
   container: {
     display: "flex",
     flex: 1,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: "black",
     height: 53,
     backgroundColor: "#EAEAEA",

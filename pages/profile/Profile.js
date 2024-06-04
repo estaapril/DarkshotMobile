@@ -5,14 +5,8 @@ import MainContainer from "../../components/shared folder/containers/mainContain
 import useTheme from "../../hook/useTheme";
 import { global } from "../../styles/global";
 import SectionContainer from "../../components/shared folder/containers/sectionContainer/SectionContainer";
-import { empName, role, skills } from "../../constants/Constants";
-import CustomButton from "../../components/shared folder/buttons/CustomButton";
+import { skills } from "../../constants/Constants";
 import emptyImage from "../../assets/images/emptyImage.png";
-import emailLogo from "../../assets/icons/emailLogo.png";
-import mobile from "../../assets/icons/mobile.png";
-import time from "../../assets/icons/time.png";
-import logout from "../../assets/icons/logout.png";
-import { registration1 } from "../../constants/Constants";
 import download from "../../assets/icons/download.png";
 import back from "../../assets/icons/back.png";
 import edit from "../../assets/icons/edit.png";
@@ -62,10 +56,14 @@ const Profile = () => {
     <MainContainer isDark={isDark} hasLogo={false}>
       <View style={styles.topContainer}>
         <View style={styles.backContainer}>
-          <Image source={back} style={styles.backIcon}></Image>
+          <TouchableOpacity>
+            <Image source={back} style={styles.backIcon}></Image>
+          </TouchableOpacity>
         </View>
         <View style={styles.editContainer}>
-          <Image source={edit} style={styles.editIcon}></Image>
+          <TouchableOpacity>
+            <Image source={edit} style={styles.editIcon}></Image>
+          </TouchableOpacity>
         </View>
       </View>
       <SectionContainer header={"profile"}>

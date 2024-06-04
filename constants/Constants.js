@@ -10,12 +10,15 @@ export const name = "Employer name*";
 export const position = "hiring manager";
 
 export const mainNotif = {
-  greetings: "Good Day! This is Trizzia from Darkshot.",
+  greetings: "Good Day!",
   message:
     "Your application has been shortlisted for this position. Here are the details of your interview. September 30, 2023, between 3:00 p.m and 6:00 p.m. MNL time.",
-  id: "Zoom id: 23mxcknx",
-  pin: "Zoom pin: 124232",
-  link: "Zoom link: https://zoom.us",
+  id: "Zoom id: ",
+  idDetail: "23mxcknx",
+  pin: "Zoom pin: ",
+  pinDetail: "124232",
+  link: "Zoom link: ",
+  linkDetail: "https://zoom.us",
 };
 
 export const registration1 = [

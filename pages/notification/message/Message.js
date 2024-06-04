@@ -15,7 +15,7 @@ const Message = () => {
 
   return (
     <MainContainer isDark={isDark} scrollable={false}>
-      <SectionContainer header={"invitation"}>
+      <SectionContainer header={"notifications"}>
         <View style={styles.mainContainer}>
           <Text style={[styles.header, fs.poppinsBold]}>
             {mainNotif.greetings} {"\n"}
@@ -24,43 +24,51 @@ const Message = () => {
             {mainNotif.message}
             {"\n"}
           </Text>
-          <View>
-            <Text style={fs.poppins}>{mainNotif.id}</Text>
-            <Text style={fs.poppins}>{mainNotif.pin}</Text>
 
+          <View style={styles.inlineTextContainer}>
+            <Text style={fs.poppinsBold}>
+              {mainNotif.id}
+              {"\n"}
+            </Text>
             <Text style={fs.poppins}>
-              {mainNotif.link} {"\n"}
+              {mainNotif.idDetail}
+              {"\n"}
             </Text>
           </View>
 
-          <Text style={fs.poppins}>
-            Note: Please be ready 10 minutes before the scheduled time. {"\n"}
-          </Text>
+          <View style={styles.inlineTextContainer}>
+            <Text style={fs.poppinsBold}>
+              {mainNotif.pin} {"\n"}
+            </Text>
+            <Text style={fs.poppins}>
+              {mainNotif.pinDetail} {"\n"}
+            </Text>
+          </View>
 
-          <Text style={[styles.buttonText, fs.inter]}>
-            {"\n"}
-            Click on your response to this email
-          </Text>
+          <View style={styles.inlineTextContainer}>
+            <Text style={fs.poppinsBold}>
+              {mainNotif.link} {"\n"}
+            </Text>
+            <Text style={fs.poppins}>
+              {mainNotif.linkDetail} {"\n"}
+            </Text>
+          </View>
         </View>
 
+        <Text style={fs.poppinsBold}>Note: </Text>
+        <Text style={fs.poppins}>
+          Please be ready 10 minutes before {"\n"}the scheduled time.
+        </Text>
+
         <View style={styles.btnContainer}>
+          <TouchableOpacity style={styles.buttonStyles}>
+            <Text style={fs.inter}>Not available</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={[styles.buttonStyles, { backgroundColor: "black" }]}
           >
             <Text style={[styles.buttonText, fs.inter, { color: "white" }]}>
-              Yes, I'm available
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.buttonStyles}>
-            <Text style={fs.inter}>No, I'm not available</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.btnSubmitContainer}>
-          <TouchableOpacity>
-            <Text style={[styles.btnSubmit, fs.interBold]}>
-              {"Submit response"}
+              Available
             </Text>
           </TouchableOpacity>
         </View>

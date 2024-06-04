@@ -8,9 +8,17 @@ import SectionContainer from "../../../components/shared folder/containers/secti
 import CustomButton from "../../../components/shared folder/buttons/CustomButton";
 import emptyImage from "../../../assets/images/emptyImage.png";
 import { TextInput } from "react-native-paper";
+import back from "../../../assets/icons/back.png";
+import edit from "../../../assets/icons/edit.png";
+import download from "../../../assets/icons/download.png";
+import { skills } from "../../../constants/Constants";
 
-const Profile = () => {
+const EditProfile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [username, setUsername] = useState("");
+  const handleUsername = (text) => {
+    return setUsername(text);
+  };
 
   const handleFilePick = async () => {
     try {
@@ -32,196 +40,96 @@ const Profile = () => {
   const { theme } = useTheme(isDark);
 
   return (
-    <MainContainer isDark={isDark}>
-      <Image source={emptyImage} style={styles.imageProfile}></Image>
-
-      <SectionContainer header={"edit profile"}></SectionContainer>
-
-      <View
-        style={{
-          top: -10,
-          flexDirection: "column",
-          rowGap: 20,
-          marginBottom: 30,
-        }}
-      >
-        <View
-          style={{
-            position: "absolute",
-            top: -10,
-            left: 15,
-            zIndex: 1,
-            paddingHorizontal: 10,
-          }}
-        >
-          <Text
-            style={{
-              backgroundColor: "white",
-              paddingHorizontal: 8,
-              ...fs.poppinsSemiBold,
-              fontSize: 15,
-            }}
-          >
-            NAME
-          </Text>
+    <MainContainer isDark={isDark} hasLogo={false}>
+      <View style={styles.topContainer}>
+        <View style={styles.backContainer}>
+          <TouchableOpacity>
+            <Image source={back} style={styles.backIcon}></Image>
+          </TouchableOpacity>
         </View>
-
-        <TextInput
-          style={{
-            borderWidth: 2,
-            backgroundColor: "white",
-            borderStartStartRadius: 40,
-            borderStartEndRadius: 40,
-            borderRadius: 40,
-          }}
-          placeholder="Alfredo John Lera III"
-          placeholderTextColor="gray"
-        />
-
-        <View>
-          <View
-            style={{
-              position: "absolute",
-              top: -10,
-              left: 15,
-              zIndex: 1,
-              paddingHorizontal: 10,
-            }}
-          >
-            <Text
-              style={{
-                backgroundColor: "white",
-                paddingHorizontal: 8,
-                ...fs.poppinsSemiBold,
-                fontSize: 15,
-              }}
-            >
-              EMAIL ID
-            </Text>
-          </View>
-
+        <View style={styles.editContainer}>
+          <TouchableOpacity>
+            <Image source={edit} style={styles.editIcon}></Image>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <SectionContainer header={"profile"}>
+        <View style={styles.imageContainer}>
+          <Image source={emptyImage} style={styles.imageStyle}></Image>
+        </View>
+      </SectionContainer>
+      <View style={styles.mainContainer}>
+        <View style={styles.container}>
+          <Text style={[styles.form, fs.montserrat]}>Full Name</Text>
           <TextInput
-            style={{
-              borderWidth: 2,
-              backgroundColor: "white",
-              borderStartStartRadius: 40,
-              borderStartEndRadius: 40,
-              borderRadius: 40,
-            }}
-            placeholder="leraajr@gmail.com"
+            style={styles.inputStyle}
+            onChangeText={handleUsername}
+            placeholder="John C. Doe"
             placeholderTextColor="gray"
           />
         </View>
-
-        <View>
-          <View
-            style={{
-              position: "absolute",
-              top: -10,
-              left: 15,
-              zIndex: 1,
-              paddingHorizontal: 10,
-            }}
-          >
-            <Text
-              style={{
-                backgroundColor: "white",
-                paddingHorizontal: 8,
-                ...fs.poppinsSemiBold,
-                fontSize: 15,
-              }}
-            >
-              PHONE
-            </Text>
-          </View>
-
+        <View style={styles.container}>
+          <Text style={[styles.form, fs.montserrat]}>Email</Text>
           <TextInput
-            style={{
-              borderWidth: 2,
-              backgroundColor: "white",
-              borderStartStartRadius: 40,
-              borderStartEndRadius: 40,
-              borderRadius: 40,
-            }}
-            placeholder="09456853215"
+            style={styles.inputStyle}
+            onChangeText={handleUsername}
+            placeholder="my-email@gmail.com"
             placeholderTextColor="gray"
           />
         </View>
-
-        <View>
-          <View
-            style={{
-              position: "absolute",
-              top: -10,
-              left: 15,
-              zIndex: 1,
-              paddingHorizontal: 10,
-            }}
-          >
-            <Text
-              style={{
-                backgroundColor: "white",
-                paddingHorizontal: 8,
-                ...fs.poppinsSemiBold,
-                fontSize: 15,
-              }}
-            >
-              PASSWORD
-            </Text>
-          </View>
-
+        <View style={styles.container}>
+          <Text style={[styles.form, fs.montserrat]}>Contact Number</Text>
           <TextInput
-            style={{
-              borderWidth: 2,
-              backgroundColor: "white",
-              borderStartStartRadius: 40,
-              borderStartEndRadius: 40,
-              borderRadius: 40,
-            }}
-            placeholder="●●●●●●●●●"
+            style={styles.inputStyle}
+            onChangeText={handleUsername}
+            placeholder="0956257415"
             placeholderTextColor="gray"
           />
         </View>
       </View>
 
-      <SectionContainer header={"skills"}></SectionContainer>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: "row",
-        }}
-      >
-        <View style={{ width: 190, top: -20 }}>
-          <CustomButton isSecondary label={"EDIT SKILLS"} />
+      <SectionContainer header={"skills"}>
+        <View style={[styles.skillsContainer, { marginBottom: 40 }]}>
+          {skills
+            .filter((category) => category.id === 1)
+            .flatMap((category) => category.list)
+            .map((skill, index) => (
+              <TouchableOpacity key={index} style={styles.skillsList}>
+                <Text style={[styles.text, fs.agdasimaBold]}>{skill.name}</Text>
+              </TouchableOpacity>
+            ))}
         </View>
-      </View>
-      <SectionContainer header={"files"}></SectionContainer>
-      <Text style={[styles.fileText, fs.poppins]}>{"resume"}</Text>
-      <View style={styles.choosefileContainer}>
-        <TouchableOpacity style={styles.downloadBtn} onPress={handleFilePick}>
-          <Text style={[styles.btnStyle, fs.poppins]}>{"upload"}</Text>
-        </TouchableOpacity>
-        <View style={styles.fileNamePlaceholder}>
-          <Text style={[styles.placeholder, fs.poppins]}>
-            {selectedFile ? selectedFile.name : "my_resume.docx"}
-          </Text>
-        </View>
-      </View>
-      <View style={styles.filesContainer}>
-        <Text style={[styles.fileText, fs.poppins]}>{"portfolio"}</Text>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-          }}
-        >
-          <View style={{ width: 190, top: 8 }}>
-            <CustomButton isSecondary label={"EDIT PORTFOLIO"} />
+      </SectionContainer>
+
+      <SectionContainer header={"files"}>
+        <Text style={[styles.fileText, fs.poppinsMedium]}>{"Resume"}</Text>
+        <View style={styles.choosefileContainer}>
+          <View style={styles.fileNamePlaceholder}>
+            <Text style={[styles.placeholder, fs.poppins]}>
+              {selectedFile ? selectedFile.name : "file.pdf"}
+            </Text>
           </View>
+          <TouchableOpacity style={styles.downloadBtn} onPress={handleFilePick}>
+            <Text style={[styles.btnStyle, fs.poppins]}>{"Download"}</Text>
+            <Image source={download} style={styles.downloadIcon} />
+          </TouchableOpacity>
         </View>
+        <Text style={[styles.fileText, fs.poppinsMedium]}>
+          {"View Portfolio"}
+        </Text>
+      </SectionContainer>
+
+      <View style={styles.uploadContainer}>
+        <Text style={[styles.uploadText, fs.poppins]}>{"7 Files"}</Text>
       </View>
+      {/* <View style={styles.container}>
+      <View style={styles.logoutContainer}>
+        <CustomButton isSecondary={true} label="Logout" />
+        <Image source={logout} style={styles.image}></Image>
+      </View>
+    </View> */}
     </MainContainer>
   );
 };
 
-export default Profile;
+export default EditProfile;

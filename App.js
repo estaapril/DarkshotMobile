@@ -44,7 +44,7 @@ function App() {
           ></Stack.Screen> */}
           {/* <Stack.Screen name="Registration3" component={Registration3} /> */}
           {/* <Stack.Screen name="Registration4" component={Registration4} /> */}
-          {/* <Stack.Screen name="Home" component={Home} /> */}
+          <Stack.Screen name="Home" component={Home} />
           {/* <Stack.Screen name="Application" component={Application} /> */}
           {/* <Stack.Screen name="Notification" component={Notification} /> */}
           {/* <Stack.Screen name="Message" component={Message} /> */}
@@ -52,7 +52,7 @@ function App() {
           {/* <Stack.Screen name="FinalInterview" component={FinalInterview} /> */}
           {/* <Stack.Screen name="InitialFeedback" component={InitialFeedback} /> */}
           {/* <Stack.Screen name="FinalFeedback" component={FinalFeedback} /> */}
-          <Stack.Screen name="Profile" component={Profile} />
+          {/* <Stack.Screen name="Profile" component={Profile} /> */}
           {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
           {/* <Stack.Screen name="Portfolio" component={Portfolio} /> */}
           {/* <Stack.Screen name="OpenImage" component={OpenImage} /> */}
