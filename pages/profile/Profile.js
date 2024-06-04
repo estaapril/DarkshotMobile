@@ -14,6 +14,8 @@ import time from "../../assets/icons/time.png";
 import logout from "../../assets/icons/logout.png";
 import { registration1 } from "../../constants/Constants";
 import download from "../../assets/icons/download.png";
+import back from "../../assets/icons/back.png";
+import edit from "../../assets/icons/edit.png";
 
 const Profile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -57,7 +59,15 @@ const Profile = () => {
     number: "",
   });
   return (
-    <MainContainer isDark={isDark} hasLogo={true}>
+    <MainContainer isDark={isDark} hasLogo={false}>
+      <View style={styles.topContainer}>
+        <View style={styles.backContainer}>
+          <Image source={back} style={styles.backIcon}></Image>
+        </View>
+        <View style={styles.editContainer}>
+          <Image source={edit} style={styles.editIcon}></Image>
+        </View>
+      </View>
       <SectionContainer header={"profile"}>
         <View style={styles.imageContainer}>
           <Image source={emptyImage} style={styles.imageStyle}></Image>
@@ -96,20 +106,19 @@ const Profile = () => {
       <SectionContainer header={"files"}>
         <Text style={[styles.fileText, fs.poppinsMedium]}>{"Resume"}</Text>
         <View style={styles.choosefileContainer}>
-          <TouchableOpacity style={styles.downloadBtn} onPress={handleFilePick}>
-            <Text style={[styles.btnStyle, fs.poppins]}>{"Download"}</Text>
-            <Image source={download} style={styles.downloadIcon} />
-          </TouchableOpacity>
           <View style={styles.fileNamePlaceholder}>
             <Text style={[styles.placeholder, fs.poppins]}>
               {selectedFile ? selectedFile.name : "file.pdf"}
             </Text>
           </View>
+          <TouchableOpacity style={styles.downloadBtn} onPress={handleFilePick}>
+            <Text style={[styles.btnStyle, fs.poppins]}>{"Download"}</Text>
+            <Image source={download} style={styles.downloadIcon} />
+          </TouchableOpacity>
         </View>
-
-        <View style={styles.designContainer}>
-          <Text style={styles.fileText}>or</Text>
-        </View>
+        <Text style={[styles.fileText, fs.poppinsMedium]}>
+          {"View Portfolio"}
+        </Text>
       </SectionContainer>
 
       <View style={styles.uploadContainer}>
